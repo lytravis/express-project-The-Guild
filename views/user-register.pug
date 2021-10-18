@@ -2,4 +2,22 @@ extends layout.pug
 
 block content
   form(action="/users/register" method="post")
-  label(for="firstName")
+
+    input(type='hidden' name='_csrf' value=csrfToken)
+    div
+      label(for="firstName" ) First Name
+      input(name='firstName' type='text'  required)
+    div
+      label(for='lastName') Last Name
+      input(name='lastName' type='text' required)
+    div
+      label(for='email') Email
+      input(name='email' type='email' required)
+    div
+      label(for='password') Password
+      input(name='password' type='password' required)
+    div
+      label(for='confirmPassword') Confirm Password
+      input(name='confirmPassword' type='password' required)
+    div
+      button(type="submit") Register

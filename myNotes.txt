@@ -7,6 +7,8 @@ TASKS
     - conditional log-out button
     - display 'top' games of genres
     - create logo for app (potential hyperlink), used for favicon
+- search feature
+    - **database needs to be seeded beforehand
 - routes
     - games
         - GET
@@ -19,4 +21,5 @@ TASKS
         - search from genre?
         - relational?
 - Games Shelves
-    -
+    - set up empty games shelves
+    - create functionality for 3-genre for each user

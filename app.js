@@ -9,6 +9,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const shelvesRouter = require('./routes/game-shelves')
+const { logUserOut, logUserIn, restoreUser } = require('./auth');
 
 const app = express();
 
@@ -33,12 +34,20 @@ app.use(
   })
 );
 
+app.use(restoreUser)
+
 // create Session table if it doesn't already exist
 store.sync();
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/game_shelves', shelvesRouter);
+
+// logout here so redirect to home
+app.post('/logout', (req, res) => {
+  logUserOut(req, res);
+  res.redirect('/')
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

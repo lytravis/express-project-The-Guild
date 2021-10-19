@@ -24,9 +24,50 @@ router.get("/register", csrfProtection, (req, res) => {
   });
 });
 
-// const userValidators = [
-//   check('firstName').exists({checkFalsy: true}).withMessage("Please provide your first name").isLength({max:50}).withMessage("First name must be no more than 50 characters long"),check('lastName').exists({checkFalsy: true}).withMessage("Please provide your last name").isLength({max:50}).withMessage('Last name must be no more than 50 characters long'),check('email').exists({checkFalsy})
-// ]
+const userValidators = [
+  check("firstName")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide your first name")
+    .isLength({ max: 50 })
+    .withMessage("Please limit your first name to 50 characters long"),
+  check("lastName")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide your last name")
+    .isLength({ max: 50 })
+    .withMessage("Please limit your last name to 50 characters long"),
+  check("email")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide your Email Address")
+    .isLength({ max: 50 })
+    .withMessage("Please limit your email address to 50 characters long")
+    .isEmail()
+    .withMessage("Provided email Address is not a valid email")
+    .custom((value) => {
+      return db.User.findOne({ where: { email: value } }).then((user) => {
+        if (user) {
+          return Promise.reject(
+            "The provided email address is already in use.  Please try again"
+          );
+        }
+      });
+    }),
+  check("password")
+    .exists({ checkFalsy: true })
+    .withMessage("Please provide a value for Password")
+    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, "g")
+    .withMessage(
+      'Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'
+    ),
+  check("confirmPassword")
+    .exists({ checkFalsy: true })
+    .withMessage("Please confirm your password")
+    .custom((value, { req }) => {
+      if (value !== req.body.password) {
+        throw new Error("Your passwords must match");
+      }
+      return true;
+    }),
+];
 
 router.get("/login", csrfProtection, (req, res) => {
   res.render("user-login", {
@@ -47,8 +88,33 @@ const loginValidators = [
 router.post(
   "/register",
   csrfProtection,
+  userValidators,
   asyncHandler(async (req, res, next) => {
     const { firstName, lastName, email, password, confirmPassword } = req.body;
+
+    const user = db.User.build({
+      email,
+      firstName,
+      lastName,
+    });
+
+    const validatorErrors = validationResult(req);
+
+    if (validatorErrors.isEmpty()) {
+      const hashedPassword = await bcrypt.hash(password, 10);
+      user.hashedPassword = hashedPassword;
+      await user.save();
+      loginUser(req, res, user);
+      res.redirect("/");
+    } else {
+      const errors = validatorErrors.array().map((error) => error.msg);
+      res.render("user-register", {
+        title: "Register",
+        user,
+        errors,
+        csrfToken: req.csrfToken(),
+      });
+    }
   })
 );
 

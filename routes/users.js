@@ -56,7 +56,7 @@ const userValidators = [
     .withMessage("Please provide a value for Password")
     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, "g")
     .withMessage(
-      'Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'
+      'Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "%^&!@#$*")'
     ),
   check("confirmPassword")
     .exists({ checkFalsy: true })
@@ -104,7 +104,7 @@ router.post(
       const hashedPassword = await bcrypt.hash(password, 10);
       user.hashedPassword = hashedPassword;
       await user.save();
-      loginUser(req, res, user);
+      logUserIn(req, res, user);
       res.redirect("/");
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);

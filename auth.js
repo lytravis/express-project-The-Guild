@@ -1,4 +1,4 @@
-const db = require('./db/models');
+const db = require("./db/models");
 
 const logUserIn = (req, res, user) => {
   req.session.auth = {
@@ -12,7 +12,7 @@ const logUserOut = (req, res) => {
 
 const requireAuth = (req, res, next) => {
   if (!res.locals.authenticated) {
-    return res.redirect('/users/login');
+    return res.redirect("/users/login");
   }
   return next();
 };

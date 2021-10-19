@@ -1,0 +1,22 @@
+
+TASKS
+- populate data (i.e. games)
+- setting home page
+    - div containers
+    - login/register button
+    - conditional log-out button
+    - display 'top' games of genres
+    - create logo for app (potential hyperlink), used for favicon
+- routes
+    - games
+        - GET
+    - gameshelves
+        - GET (see gameshelves)
+        - POST
+        - create form
+    - reviews
+    - genre
+        - search from genre?
+        - relational?
+- Games Shelves
+    -

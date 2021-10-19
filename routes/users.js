@@ -24,6 +24,10 @@ router.get("/register", csrfProtection, (req, res) => {
   });
 });
 
+// const userValidators = [
+//   check('firstName').exists({checkFalsy: true}).withMessage("Please provide your first name").isLength({max:50}).withMessage("First name must be no more than 50 characters long"),check('lastName').exists({checkFalsy: true}).withMessage("Please provide your last name").isLength({max:50}).withMessage('Last name must be no more than 50 characters long'),check('email').exists({checkFalsy})
+// ]
+
 router.get("/login", csrfProtection, (req, res) => {
   res.render("user-login", {
     title: "Login",
@@ -60,7 +64,7 @@ router.post(
 
     if (validatorErrors.isEmpty()) {
       const user = await db.User.findOne({ where: { email } });
-
+      console.log(user);
       if (user !== null) {
         const passwordMatch = await bcrypt.compare(
           password,

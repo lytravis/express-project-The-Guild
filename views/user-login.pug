@@ -5,7 +5,7 @@ block content
         ul
             each error in errors
                 li= error
-    form(action="/users/register" method="post")
+    form(action="/users/login" method="post")
         input(type='hidden' name='_csrf' value=csrfToken)
         div
             label(for='email') Email

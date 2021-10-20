@@ -9,7 +9,8 @@ html
       span() Welcome #{user.firstName}
       //- form(action='/logout', method='post')
       //-   button(type='submit') Logout
-      a(href='/logout') Logout
+      form(action="/logout", method="post" class='logout-btn')
+        button(type="submit") Logout
     else
       span() Hello Guest
       a(href='/users/login') Login

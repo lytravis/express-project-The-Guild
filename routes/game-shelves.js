@@ -5,9 +5,13 @@ const router = express.Router();
 
 router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
   const shelfId = req.params.id;
-  const shelf = await db.GameShelf.findByPk(shelfId);
-  //TODO list games
-  res.render("shelf-page");
+  const games = await db.Game.findAll({
+    include: [{
+      model: db.GameShelf,
+      where: { id: shelfId }
+    }]
+  })
+  res.render("shelf-page", { games });
 }));
 
 router.post("/:id(\\d+)/delete",
@@ -22,7 +26,6 @@ router.post("/:id(\\d+)/delete",
   })
 );
 
-
 router.post(
   "/new",
   asyncHandler(async (req, res) => {
@@ -36,5 +39,16 @@ router.post(
     res.redirect(`/users/${userId}`);
   })
 );
+
+router.post("/:id(\\d+)/add", asyncHandler(async (req, res) => {
+  const{ addToShelf } = req.body;
+  console.log(req.params.id);
+  const userId = req.session.auth.userId;
+  const newGame = db.GameGameShelf.create({
+    gameShelvesId: addToShelf,
+    gameId
+  })
+
+}));
 
 module.exports = router;

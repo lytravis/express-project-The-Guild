@@ -523,6 +523,264 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          userId: 14,
+          gameId: 19,
+          rating: 5,
+          content:
+            "This is the best CoD in the series. It has in my opinion the best campaign in the series with a clear goal and everything is well explained, carachters are intresting, fun and likeable and the story does a good job to connecting to world at war's story (SOMETHING BO3 COULD LEARN ABOUT.) Tho there are some problems in historical accuracy, in the first vietnam mission which5 takes place in 1963 the song Fortunate son plays and guess what, that song came out in 1969, In the first mission the song played in the cuban bar (Quimbara) is released 1974 and lastly in the wmd mission hudson uses the AUG gun in service since 1978. Treyarch, how bad could DO A 5 SECOND RESEARCH IN GOOGLE be? Moving onto multiplayer, its pretty great too, it has really good maps and its balanced relatively speaking cause famas is broken, almost like its an AR 10 years older than the others, oh wait it is. But every cod has op weapons, smgs are all trash except for the mp5k and ak74u (wich is also a 1978 weapon :)) it introduced theater mode, gun game and has a currency system wich is not monetized so great! Zombies give u 3 maps wich are some of my favorites in the series, its pretty ez to pack a punch and they are fun to play solo (something that cannot be said for newer cods) I give it 9.7/10 experience but godamnit treyarch! Make some more research next time.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 12,
+          gameId: 19,
+          rating: 5,
+          content:
+            "This game is my favorite in the series. For starters, it's in the Vietnam war which is a lot more uncommon than it is in other first-person shooters and games in general. The story was great and never got boring or stale. The Guns were great and there all kinds of different weapons that they had from crossbow's to even miniguns. The return of Reznov was great and the Twist ending was great and caught me off guard. The game also was a good length unlike black ops 2 which was too short I thought. There is also a section of the game where you use a helicopter and was really fun. And is the first call of duty to have a new character that you play as is not quiet and made the character you play as interesting, unlike the other cod games. I overall think this game is so good and you have to play if you haven't played it already as the game goes for really cheap on eBay.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 14,
+          gameId: 19,
+          rating: 5,
+          content:
+            "Honestly this is one of the best shooting games of its time. Call of duty Black ops one is a thrilling first person shooter game that has revolutionized the video game community. It provides the best you can ask for in any shooting game. My personal favorite feature of this astounding game is the Multiplayer. it contains a plethora of weapons and in game perks to help the player. There is  a variety of different fast paced game modes that keep the player on edge. Alongside are diverse and colorful maps in which the players battle on. The prize possession of this masterpiece is definitely the campaign. In the campaign you are Alex Mason, A special ops marine and C.I.A operative who ventures through events that happened in the cold war in order to stop a Russian terrorist by the name of Nikita Dragovitch who plans on releasing nova 6 a chemical weapon that will havoc among the west. The zombies is amazing. The first map is unforgettably legendary. It keeps you on your toes as you battle your way in expansive maps. This game truly provides the best shooting experience. The only downside is that there is no remaster yet but truly a gaming marvel :)",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 8,
+          gameId: 19,
+          rating: 5,
+          content:
+            "Oh my god. This game is the best call of duty game of all time, my favourite. The campaign is apsoluetly amazing, such a good story, so entertaining, never ever gets old. The multiplayer is brilliant, great killstreaks, amazing maps, and the point system isnt a pathetic excuse to squeeze money out of the consumer, like it is in the newer games. Zombies is my favourite game mode in the franchise, and in bo1, it blows me away, perks are great, excellent maps, excellent weapons. There's none of that stupid bo4 system involved, there's no gobblegum, it's plain, brilliant, zombies. It's my favourite cod game and it'll probably always be that way, it'd be hard to beat this game for enjoyment, HIGHLY! recommend!",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 9,
+          gameId: 19,
+          rating: 5,
+          content:
+            "Even though I thought it was a 4-star a year ago, I revisited it and oohhhhhh boy! Amazing zombies mode, multiplayer is solid, and the campaign is beutiful! I also think that the main menu is one of the best in gaming history. Along with a PC that you could play zork on! They put so much into this and if you hate this it is obvious you are not a fan of how many people are in multiplayer, or how the zombies can 1-hit you, or thought that they dived into controversy. This is amazing, back when COD wasnt scared. Its like he was the kid on the playground who would do dangerous things but always wiggled it way out of it and had fun. Whenever I play this I feel like its been 4 hours, and I have been grinding for the past week, for the guns. Amazing. 5 Stars. I love this game. Best in the series",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 14,
+          gameId: 2,
+          rating: 5,
+          content:
+            "This is an absolute gem of a game. I haven't been this invested in a game since Skyrim, and this has gone above and beyond any of my expectations I had from an RPG, let alone a turn-based one.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 4,
+          gameId: 2,
+          rating: 5,
+          content:
+            "Great Role Playing Game!  I was trying to avoid MMORPG due to no desire paying a fortune for In Game Items that usually never stop popping up. After a few days of searching i found this jewel! This game has everything you could find in any other MMORPG except you don't have to buy anything in the game shops for real money and no annoying online players if you play story line mode which is the core of this game.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 14,
+          gameId: 2,
+          rating: 4,
+          content:
+            "I bought this game after 50h in CP 2077 v.1.05 to compare one RPG to another. DOS 2 is an RPG, but its RPG by definition in everything, every part of this game screams at you I'M RPG!!!!. Its not immersive game, nor is it most entertaining, it's simply very well made game based on tabletop strategic rpg games.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 16,
+          gameId: 2,
+          rating: 3,
+          content:
+            "In many ways, Divinity Original Sin II is an incredible rpg. I has pretty visuals, diverse voice-overs, and an absolutely immaculate combat system. However, ultimately there were too many things that I felt ruined my personal experience with the game. One of the major flaws to me is how drastically your role will be depending on what character you play as. Basically, if you pick one of the pre-existing characters the designers made, there is very rich dialogue and they are full of interesting backstories. But if you custom create a character, your dialogue choices are comparatively hollow and the experience is far more shallow. You end up feeling more like a walking husk then a living, breathing character in the world.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 9,
+          gameId: 2,
+          rating: 2,
+          content:
+            "Extremely overrated game. A good example of the bad design choices that litter this game is in the main world map, they give you no way to figure out where you shouldn't go because of higher level enemies other than trial and error via dying or running. The game wastes your time a lot, and is so sensitive to levels that even enemies 1 level higher can take you out easily for a good 3/4's of the game. The game is imbalanced, poorly designed, and there isn't a single good ending in it.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 4,
+          gameId: 2,
+          rating: 5,
+          content:
+            "Incredible masterpiece of a game! The way the developers care about and listen to the fans/players and what they want really does shine through in every way. You can just tell how the developers put all their hearts and souls into making this game, it is truly a labour of love. It's a remarkably perfect example of everything done right to every other game studio/developer team out there. Big thumbs up!",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 6,
+          gameId: 2,
+          rating: 4,
+          content:
+            "One of the best RPGs ever made. The combat system offers infinite possibilities and depth with build variety to boot, the music is superb and the best in the genre, the world feels lived in and fully realized and all the characters have interesting origin stories and choices you make can lead to unexpected situations or completely change how events unfold in the future. This is as good as CRPGs get in general. It's a flawless gem that I hope more people would try out.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 11,
+          gameId: 2,
+          rating: 4.5,
+          content:
+            "This is my first turn style game I have played and it is awesome. I play on the Nintendo Switch.  I am playing a solo game and an online game with friends.  The game has a rich story, challenging bosses, and good character development.  As a solo player it is more challenging as any story character you invite to group you have to keep track of their stats and armor requirements if you want to be successful.  But that is ok it makes you strategize more as an individual.  If you like to game with others there are hours and hours of game play.  The game reminds me of the D&D board game I played years ago.  I highly recommend this game if you like a top down turn style gameplay with challenges and adventure.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 13,
+          gameId: 2,
+          rating: 1,
+          content:
+            "This game is horrible on PS4 (maybe the controls & combat are immensely better on PC). I put a couple of hours into it, giving it a chance, and kept asking how it was ever released. I strongly believe whomever designed the combat system had no intention of player enjoyment. In the opening chapter (aboard the ship), you barely scrape by fighting sea-roaches. Seriously, they eat your face, you're lucky to survive. Hardly any healing, so the next sea-roach finishes the job. Each character is supposed to be this powerful anti-hero, and it feels like you're pond scum. Everything about the game is clumsy & cumbersome. Every fight starts with NPCs casting area effect that debilitates you. In chapter 2, I dug in the sand, a zombie popped up, beat the piss out of me - I tried to run away, it had better movement than me, and straight-up murdered me. How is that fun? I can't recommend avoiding this game more, it was retchid. I have to imagine the PC version has extremely better controls, that's the only explanation for any conceivable positive reviews.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 5,
+          gameId: 2,
+          rating: 1,
+          content:
+            "Maybe ok on a PC but it has been very badly ported over to the Xbox.The controls are clunky and oftentimes unmanageable. You will find yourself randomly running through poison or fire while desperately trying to cancel or talking to your own characters mid fight and wasting time. I managed to electrocute a table twice while frustrated that I couldn't hit the enemy who was happily lobbing grenades at me. The pace is extraordinarily slow. It will take you hours to simply move around the map. This is not aided by the strange graphics and odd point of view which is both obscuring and confusing.  I cannot recommend the Xbox version at all. Perhaps I've been spoiled by AAA games like Morrowind, Skyrim and Fallout over the years but they are heads and shoulders above this.,",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 10,
+          gameId: 2,
+          rating: 2,
+          content:
+            "This game embodies what I dreamt about in terms of better 3D graphics and the ability to interact with the world while playing RPGs in 90s and early 00s. Story seems deep, the world well thought-out and game mechanics work for me. I like the free movement exploration switching to turn-based combat. I highly recommend it for fantasy RPG fans.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 9,
+          gameId: 3,
+          rating: 5,
+          content:
+            "Disco Elysium is one of my new favourites! Incredibly unique and compelling - with a beautiful art style, superbly written and incredibly engaging. Messing up is actively encouraged - making choices feels truly impactful and worthwhile, albeit on a more personal level - rather than following a simplified 'paragon' vs 'renegade' or similarly binary path. ",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 6,
+          gameId: 3,
+          rating: 4.5,
+          content:
+            "This is easily the best written game ever created, and it's not close. Critics put it on the same level as Planescape: Torment out of respect for a classic, but in truth, Disco Elysium outclasses even Torment by a number of leagues. There is a quality here that is simply not matched by any other digital medium. Disco Elysium's writing effortlessly competes with the best books I've read. It also has beautiful art, takes place in a fascinating universe and is immersive as hell. ",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 7,
+          gameId: 3,
+          rating: 4,
+          content:
+            "Where to even begin. I guess I'll just start at the beginning... Disco Elysium starts off by immediately making the player feel uncomfortable. The creepy voices of your limbic system and ancient lizard brain are haunting and the first scenes immediately throws you off balance and makes you ask What the hell is this?!. It invokes the perfect emotional response to the experience your character is having. As you struggle to come to grips with the world, so does your character",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 3,
+          gameId: 3,
+          rating: 5,
+          content:
+            "As a veteran gamer of 30+ years it is so refreshing to play what can only be described as a modern masterpiece of story telling wrapped in an amazing audiovisual style and elegance never seen before. Flawless attention to details never waned even to the very end of the stork. I became so drawn into the characters and places that having now finished I long to return. Lets hope this game inspires a new market that explores the mind rather than just hand-eye coordination. Not everyone wants to be rushing headlong to the finish but rather soak in the aesthetic of great writing, voice acting and audiovisual perfection at a nice pace.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 1,
+          gameId: 3,
+          rating: 5,
+          content:
+            "Disco Elysium is an extraordinary game compared to other RPGs with its characters, depth of choices, dystopic-nihilistic story, watercolor graphic style, cleverly choosen music and most of all the fantastic writing. It is a unique experience, a quietly important game with a thriliing effect on the player. I rarely become sad after finishing a game and when it happens I know that it is a good one. Well done ZA/UM and kudos to Robert Kurvitz for this oddly but beautiful experience. Highly recommended.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 14,
+          gameId: 3,
+          rating: 5,
+          content:
+            "Like no other RPG before. Disco Elysium is full of quirky humor, deep political philosophy, and absolutely brilliant writing from start to finish. The mechanics are simple and the gameplay never wavers from point-and-click detective work, but these are not critiques. Rather, they highlight the game's core strength of storytelling. This game will capture your heart and mind with a compelling narrative, a deeply disturbed protagonist, and the wonderful interplay between the pieces of his mind. I cannot recommend this game highly enough. Game of the Year 2019.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 9,
+          gameId: 2,
+          rating: 5,
+          content:
+            "This is my favorite game of all time!!! The battle system is super fun and rewarding, every move used by you or your enemies being tailor-made for them by the passionate South Park creators. Walking around town to solve puzzles and collect new weapons or equipment will never cease to feel fun and rewarding. On the topic of puzzles, some of them can actually be a bit challenging on a first playthrough, but as you get used to chaining your moves to access areas it is a blast.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 4,
+          gameId: 4,
+          rating: 3,
+          content: "the dark humour is just so funny",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 7,
+          gameId: 4,
+          rating: 3.5,
+          content:
+            "It was a fantastic game and I enjoyed so much of it. I 100% recommend this game to any fan of South Park or RPGs. But just know that this game just keeps going. I know this is a really stupid complaint but they really needed to emphasize the progress you had made in the game. Everything is so anti climactic and it’s hard to tell what stage of the game you are in. This may not seem like a big problem but if you play games like I do where I just play and play and play and in the endgame I get into an “I’m almost done” mode then it can really guck the experience. I spent about half of the game just anxiously waiting for an ending. It really seems like the school war is the last level but that’s like Half way through. I highly recommend this game but be warned.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 11,
+          gameId: 4,
+          rating: 4,
+          content:
+            "Based on the satirical hit TV show South Park, The Stick of Truth is an RPG game derivative of other well-known games, but with comedy elements from the show itself. The theme here is a medieval-style scenario, where the main boys play a game where they have to defend a relic called The Stick of Truth, and you play as a new resident in the town, joining the same boys with their game after getting used to the atmosphere.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 10,
+          gameId: 4,
+          rating: 4.5,
+          content:
+            "Playing through for the first time - only maybe 5-10% through and I already love it. I’m 32 and spent the first 22 years of my life in Colorado... so SP has always held a special place in my heart.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 9,
+          gameId: 4,
+          rating: 1,
+          content: "Game is very weird. not funny.",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          userId: 11,
+          gameId: 5,
+          rating: 1,
+          content: "Game was hot trash.  Can I get a refund?",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

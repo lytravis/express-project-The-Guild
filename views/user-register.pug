@@ -1,6 +1,8 @@
 extends layout.pug
 
 block content
+
+  img(class="logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
   form(action="/users/register" method="post")
 
     input(type='hidden' name='_csrf' value=csrfToken)

@@ -5,6 +5,7 @@ block content
         ul
             each error in errors
                 li= error
+    img(class="logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
     form(action="/users/login" method="post")
         input(type='hidden' name='_csrf' value=csrfToken)
         div

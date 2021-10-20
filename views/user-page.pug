@@ -5,7 +5,15 @@ block content
 
   p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit fugiat impedit totam veritatis iste officia alias laborum, adipisci repellat quaerat ipsum similique cum ab corrupti?
 
-  //- form(action="/game_shelves" method="post")
-  //- label(for="shelfName") Shelf Name
-  //- input(type="text" name="shelfName")
-  //- button Submit
+  h2 Game Shelves
+  each shelf in shelves
+    div(id= shelf.shelfName)
+      h3= shelf.shelfName
+
+
+  div(id="createShelf")
+    h3 Create a Shelf
+    form(action=`/users/${user.id}` method="post")
+      label(for="shelfName") Shelf Name
+      input(type="text" name="shelfName")
+      button Submit

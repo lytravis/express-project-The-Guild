@@ -11,3 +11,9 @@ block content
             div
                 p #{review.rating}
                 p #{review.content}
+    form(action=`/game_shelves/${userId}/add` method="post")
+        label(for="addToShelf") Add To Shelf
+        select(name="addToShelf")
+            each shelf in gameshelves
+                option(value= shelf.id)= shelf.shelfName
+        button Add

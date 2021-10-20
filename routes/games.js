@@ -26,6 +26,4 @@ router.get(
     res.render("one-game-page", {game, reviews})
 }));
 
-
-
 module.exports = router;

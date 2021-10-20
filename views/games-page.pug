@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+    body
+        div(class="games-list")
+            each game in games
+                a(href=`/games/${games.id}`)
+                    img(class="game-img" src=game.image, alt="#{game.name}")

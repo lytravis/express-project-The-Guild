@@ -3,16 +3,18 @@ const { asyncHandler, csrfProtection } = require('./utils');
 const router = express.Router();
 const { Review, Game } = require('../db/models')
 
+// get all reviews for specific game
 router.get('/', csrfProtection, (req, res)=>{
     res.render('review-form', {csrfToken: req.csrfToken()})
 });
 
+// post review for specific game
 router.post('/', csrfProtection, asyncHandler(async(req, res)=>{
     const userId = req.session.auth.userId;
     const gameId = req.params.gameId;
     const { rating, content } = req.body;
     const game = await Game.findByPk(userId);
-    const newReview = await Review.create({
+    await Review.create({
         userId,
         gameId,
         rating,
@@ -23,7 +25,5 @@ router.post('/', csrfProtection, asyncHandler(async(req, res)=>{
     });
     res.render('one-game-page', {reviews, game});
 }));
-
-router.post
 
 module.exports = router;

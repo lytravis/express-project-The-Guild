@@ -16,21 +16,6 @@ router.get("/:id(\\d+)", async function (req, res, next) {
   res.render("user-page", { title: `${user.firstName}'s page`, shelves, user });
 });
 
-router.post(
-  "/:id(\\d+)",
-  asyncHandler(async (req, res) => {
-    const { shelfName } = req.body;
-    const userId = req.session.auth.userId;
-
-    const shelf = await db.GameShelf.create({
-      userId,
-      shelfName,
-    });
-    res.redirect(`/users/${userId}`);
-  })
-);
-
-
 
 router.get("/register", csrfProtection, (req, res) => {
   const user = db.User.build();

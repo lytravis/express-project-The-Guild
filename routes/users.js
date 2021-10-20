@@ -11,9 +11,26 @@ const router = express.Router();
 router.get("/:id(\\d+)", async function (req, res, next) {
   const id = req.params.id;
   const user = await db.User.findByPk(id);
+  const shelves = await db.GameShelf.findAll({ where: { userId: user.id } });
 
-  res.render("user-page", { title: `${user.firstName}'s page` });
+  res.render("user-page", { title: `${user.firstName}'s page`, shelves, user });
 });
+
+router.post(
+  "/:id(\\d+)",
+  asyncHandler(async (req, res) => {
+    const { shelfName } = req.body;
+    const userId = req.session.auth.userId;
+
+    const shelf = await db.GameShelf.create({
+      userId,
+      shelfName,
+    });
+    res.redirect(`/users/${userId}`);
+  })
+);
+
+
 
 router.get("/register", csrfProtection, (req, res) => {
   const user = db.User.build();
@@ -105,6 +122,9 @@ router.post(
       user.hashedPassword = hashedPassword;
       await user.save();
       logUserIn(req, res, user);
+      await db.GameShelf.create({ shelfName: 'Currently Playing', userId: user.id });
+      await db.GameShelf.create({ shelfName: 'To Play', userId: user.id });
+      await db.GameShelf.create({ shelfName: 'Played', userId: user.id });
       res.redirect("/");
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
@@ -139,7 +159,7 @@ router.post(
 
         if (passwordMatch) {
           logUserIn(req, res, user);
-          return res.redirect("/");
+          return res.redirect(`/users/${user.id}`);
         }
       }
       errors.push("Please enter a valid email and password");

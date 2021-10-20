@@ -13,7 +13,6 @@ router.post(
   asyncHandler(async (req, res) => {
     const { shelfName } = req.body;
     const userId = req.session.auth.userId;
-    console.log(userId);
     const shelf = await db.GameShelf.create({
       userId,
       shelfName,

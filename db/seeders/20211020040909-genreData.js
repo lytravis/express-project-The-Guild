@@ -11,27 +11,27 @@ module.exports = {
       "Genres",
       [
         {
-          name: "Shooters",
+          name: "Role Playing Game",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Real-time strategy",
+          name: "Shooter",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Multiplayer online battle arena",
+          name: "Action/Adventure",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Role-playing",
+          name: "Sports",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Simulation and sports",
+          name: "Simulation",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

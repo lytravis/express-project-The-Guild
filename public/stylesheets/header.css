@@ -1,0 +1,29 @@
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: lightcoral;
+}
+
+#header-logo {
+  color: blue;
+  font-weight: 1000;
+  font-size: 2rem;
+  margin-left: 80px;
+}
+
+#header-navbar {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links {
+  list-style: none;
+  margin-right: 3rem;
+  text-decoration: none;
+  color: pink;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

@@ -8,7 +8,7 @@ block content
   h2 Game Shelves
   each shelf, index in shelves
     div
-      h3= shelf.shelfName
+      h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
       if index > 2
         form(action=`/game_shelves/${shelf.id}/delete` method="post")
           button(type="submit" name="shelfId" value= shelf.id) Delete Shelf

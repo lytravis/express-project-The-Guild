@@ -3,10 +3,12 @@ const { asyncHandler, csrfProtection } = require("./utils");
 const db = require("../db/models");
 const router = express.Router();
 
-router.get("/new", csrfProtection, (req, res) => {
-  const userId = req.session.auth.userId;
-  res.render("new-shelf", { userId, csrfToken: req.csrfToken() });
-});
+router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
+  const shelfId = req.params.id;
+  const shelf = await db.GameShelf.findByPk(shelfId);
+  
+  res.render("shelf-page");
+}));
 
 router.post("/:id(\\d+)/delete",
   asyncHandler(async (req, res) => {
@@ -18,8 +20,7 @@ router.post("/:id(\\d+)/delete",
 
     res.redirect(`/users/${userId}`);
   })
-)
-
+);
 
 
 router.post(

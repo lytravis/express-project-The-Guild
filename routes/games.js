@@ -8,11 +8,19 @@ const db = require("../db/models");
 const { Game, Genre } = db;
 
 router.get(
-  "/games",
+  "/",
   asyncHandler(async (req, res, next) => {
     const games = await Game.findAll();
     res.render("games-page", { games });
   })
 );
+
+router.get(
+  "/:gameId(\\d+)",
+  asyncHandler(async(req, res) => {
+    const id = req.params.gameId;
+    const game = await Game.findOne(id);
+    res.render("one-game-page", {game})
+}))
 
 module.exports = router;

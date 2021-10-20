@@ -18,10 +18,8 @@ router.get("/:id(\\d+)", async function (req, res, next) {
 
 
 router.get("/register", csrfProtection, (req, res) => {
-  const user = db.User.build();
   res.render("user-register", {
     title: "Register",
-    // user,
     csrfToken: req.csrfToken(),
   });
 });

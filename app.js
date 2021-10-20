@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 //testing 
+=======
+>>>>>>> 186447d8ad9511227c5c35b0b3d60e737207494e
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -7,10 +10,17 @@ const logger = require("morgan");
 const { sequelize } = require("./db/models");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+<<<<<<< HEAD
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const shelvesRouter = require("./routes/game-shelves");
 const gamessRouter = require("./routes/games");
+=======
+const { csrfProtection, asyncHandler } = require("./routes/utils");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const shelvesRouter = require("./routes/game-shelves");
+>>>>>>> 186447d8ad9511227c5c35b0b3d60e737207494e
 const { logUserOut, logUserIn, restoreUser } = require("./auth");
 
 const app = express();
@@ -44,6 +54,7 @@ store.sync();
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/game_shelves", shelvesRouter);
+<<<<<<< HEAD
 app.use("/games", gamesRouter);
 
 // logout here so redirect to home
@@ -51,6 +62,8 @@ app.post("/logout", (req, res) => {
   logUserOut(req, res);
   res.redirect("/");
 });
+=======
+>>>>>>> 186447d8ad9511227c5c35b0b3d60e737207494e
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

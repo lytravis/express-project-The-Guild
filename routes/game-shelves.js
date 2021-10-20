@@ -6,7 +6,7 @@ const router = express.Router();
 router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
   const shelfId = req.params.id;
   const shelf = await db.GameShelf.findByPk(shelfId);
-  
+  //TODO list games
   res.render("shelf-page");
 }));
 

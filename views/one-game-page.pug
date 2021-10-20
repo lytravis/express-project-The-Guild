@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+    h2= game.name
+    div(class='game-image')
+        img(class='img' src=game.image, alt=game.name)
+    div(class='div-description')
+        p(class='description') #{game.description}
+    div(class='reviews')
+        each review in reviews
+            div
+                p #{review.rating}
+                p #{review.content}

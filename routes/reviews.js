@@ -24,6 +24,6 @@ router.post('/', csrfProtection, asyncHandler(async(req, res)=>{
     res.render('one-game-page', {reviews, game});
 }));
 
-
+router.post
 
 module.exports = router;

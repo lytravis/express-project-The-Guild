@@ -4,5 +4,5 @@ block content
     body
         div(class="games-list")
             each game in games
-                a(href=`/games/${games.id}`)
+                a(href=`/games/${game.id}`)
                     img(class="game-img" src=game.image, alt="#{game.name}")

@@ -6,14 +6,16 @@ block content
   p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit fugiat impedit totam veritatis iste officia alias laborum, adipisci repellat quaerat ipsum similique cum ab corrupti?
 
   h2 Game Shelves
-  each shelf in shelves
-    div(id= shelf.shelfName)
+  each shelf, index in shelves
+    div
       h3= shelf.shelfName
-
+      if index > 2
+        form(action=`/game_shelves/${shelf.id}/delete` method="post")
+          button(type="submit" name="shelfId" value= shelf.id) Delete Shelf
 
   div(id="createShelf")
     h3 Create a Shelf
-    form(action=`/users/${user.id}` method="post")
+    form(action="/game_shelves/new" method="post")
       label(for="shelfName") Shelf Name
       input(type="text" name="shelfName")
       button Submit

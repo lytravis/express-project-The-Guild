@@ -1,8 +1,4 @@
 extends layout.pug
 
 block content
-  form(action="/game_shelves/new" method="post")
-    input(type="hidden" name="_csrf" value=csrfToken)
-    label(for="shelfName") Shelf Name
-    input(type="text" name="shelfName")
-    button(type="submit") Submit
+  h2= 

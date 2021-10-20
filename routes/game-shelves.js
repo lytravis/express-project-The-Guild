@@ -8,6 +8,20 @@ router.get("/new", csrfProtection, (req, res) => {
   res.render("new-shelf", { userId, csrfToken: req.csrfToken() });
 });
 
+router.post("/:id(\\d+)/delete",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    userId = req.session.auth.userId;
+
+    const shelf = await db.GameShelf.findOne({ where: { id } });
+    await shelf.destroy();
+
+    res.redirect(`/users/${userId}`);
+  })
+)
+
+
+
 router.post(
   "/new",
   asyncHandler(async (req, res) => {

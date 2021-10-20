@@ -8,7 +8,7 @@ html
     if locals.authenticated
       span() Welcome #{user.firstName}
       //- form(action='/logout', method='post')
-      //-   button(type='submit') Logout
+      //-   button(type='submit') Logout adding more comment here for commit
       a(href='/logout') Logout
     else
       span() Hello Guest

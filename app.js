@@ -1,4 +1,4 @@
-//dasdasda
+
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -11,8 +11,11 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const shelvesRouter = require("./routes/game-shelves");
 const gamessRouter = require("./routes/games");
+const { csrfProtection, asyncHandler } = require("./routes/utils");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const shelvesRouter = require("./routes/game-shelves");
 const { logUserOut, logUserIn, restoreUser } = require("./auth");
-
 const app = express();
 
 // view engine setup

@@ -4,16 +4,31 @@ html
       block head
         title= title
         link(rel='stylesheet' href='/stylesheets/reset.css')
+        link(rel='stylesheet' href='/stylesheets/header.css')
+
   body
+    nav(class="header")
+      #header-logo
+        a(href="/") The Guild
+      #header-navbar
+        form(class="search-bar" action="/search" method="post" )
+          input(type="text" name="search" placeholder="Find a game")
+          button(class="searchButton" type="submit") 🔍
+        a.games(href="/games") Games
+        if locals.authenticated
+          a.nav-gameShelves(href="/game_sheves") Game Shelves
+          form(action="/logout", method="post" class='logout-btn')
+            button(type="submit") Logout
+        else
+          a(href='/users/login') Login
+          a(href='/users/register') Register
+          form(action="/demo" method='post')
+            button Demo Login
+
     if locals.authenticated
-      span() Welcome #{user.firstName}
+      span() Welcome #{user.firstName} #{user.lastName}
       //- form(action='/logout', method='post')
       //-   button(type='submit') Logout
-      form(action="/logout", method="post" class='logout-btn')
-        button(type="submit") Logout
-    else
-      span() Hello Guest
-      a(href='/users/login') Login
-      a(href='/users/register') Register
+
 
     block content

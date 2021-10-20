@@ -11,6 +11,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const shelvesRouter = require("./routes/game-shelves");
 const gamesRouter = require("./routes/games");
+const reviewsRouter = require("./routes/reviews");
 const { logUserOut, logUserIn, restoreUser } = require("./auth");
 
 
@@ -46,6 +47,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/game_shelves", shelvesRouter);
 app.use("/games", gamesRouter);
+app.use("/games/:gameId(\\d+)/reviews", reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

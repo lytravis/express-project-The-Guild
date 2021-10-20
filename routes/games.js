@@ -5,7 +5,7 @@ const { requireAuth } = require("../auth");
 const { csrfProtection, asyncHandler } = require("./utils");
 
 const db = require("../db/models");
-const { Game, Genre } = db;
+const { Game, Genre, Review } = db;
 
 router.get(
   "/",
@@ -19,8 +19,13 @@ router.get(
   "/:gameId(\\d+)",
   asyncHandler(async(req, res) => {
     const id = req.params.gameId;
-    const game = await Game.findOne(id);
-    res.render("one-game-page", {game})
-}))
+    const game = await Game.findByPk(id);
+    const reviews = await Review.findAll({
+      where: {gameId: id}
+    })
+    res.render("one-game-page", {game, reviews})
+}));
+
+
 
 module.exports = router;

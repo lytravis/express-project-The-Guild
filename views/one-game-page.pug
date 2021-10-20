@@ -7,3 +7,7 @@ block content
     div(class='div-description')
         p(class='description') #{game.description}
     div(class='reviews')
+        each review in reviews
+            div
+                p #{review.rating}
+                p #{review.content}

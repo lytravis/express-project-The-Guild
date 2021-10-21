@@ -1,0 +1,22 @@
+extends layout
+
+block content
+ if games.length > 0
+    h1 You did it!
+        div 
+            ul 
+                li=`Searched: ${search}`
+
+
+    div(class='games-list')
+        each game in games
+            a(href=`/games/${game.id}`)
+             img(class='img' src=game.dataValues.image, alt=game.dataValues.name)
+ else 
+    h1 No matching games found
+        div 
+            ul 
+                li=`Searched: ${search}`
+
+
+//- h2= games[0].dataValues.name

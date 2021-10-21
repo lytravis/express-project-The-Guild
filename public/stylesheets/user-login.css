@@ -1,0 +1,37 @@
+#login-page {
+  display: flex;
+}
+
+.login-logo {
+  flex: 50%;
+  height: 100%;
+}
+
+.login-form {
+  flex: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 20%;
+}
+
+.login-input {
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.login-btn {
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/* .login-register {
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+} */

@@ -5,13 +5,16 @@ block content
         ul
             each error in errors
                 li= error
-    img(class="logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
-    form(action="/users/login" method="post")
-        input(type='hidden' name='_csrf' value=csrfToken)
-        div
-            label(for='email') Email
-            input(name='email' type='email' required)
-        div
-            label(for='password') Password
-            input(name='password' type='password' required)
-        button(type="submit")  Login
+    div(id="login-page")
+        img(class="login-logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
+        form(class="login-form" action="/users/login" method="post")
+            input(type='hidden' name='_csrf' value=csrfToken)
+            div
+                label(for='email')
+                input(class="login-input" name='email' placeholder="email" type='email' required)
+            div
+                label(for='password')
+                input(class="login-input" name='password' placeholder="password" type='password' required)
+            button(class="login-btn" type="submit")  Login
+            div
+                a(class="login-register" href="/users/register") Don't have an account?

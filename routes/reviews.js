@@ -28,7 +28,6 @@ router.post('/:gameId(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
 }));
 
 // get form to update specific review
-//comment
 router.get('/:gameId(\\d+)/:reviewId(\\d+)/update', requireAuth, csrfProtection, asyncHandler(async(req, res) => {
     const gameId = req.params.gameId;
     const reviewId = req.params.reviewId;

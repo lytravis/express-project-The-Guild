@@ -1,6 +1,5 @@
 #footer {
   position: absolute;
-  text-align: center;
   bottom: 0;
   width: 100%;
   height: fit-content;
@@ -8,7 +7,7 @@
   background-color: blanchedalmond;
 }
 
-.git-links {
+/* .git-links {
   width: 30px;
   height: 30px;
 }
@@ -16,4 +15,21 @@
 .linkedin-links {
   width: 30px;
   height: 30px;
+} */
+
+.footer-info {
+  display: flex;
+  flex-direction: rows;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.footer-img {
+  height: 35%;
+  width: 35%;
+  margin: 10px 10px;
+  /* padding: 10px; */
+  /* display: flex;
+  flex-direction: row;
+  justify-content: flex-end; */
 }

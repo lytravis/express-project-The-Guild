@@ -1,27 +1,32 @@
 extends layout.pug
 
+append head
+  link(rel="stylesheet" href="/stylesheets/user-page.css")
+
 block content
-  h1 Lorem Ipsum
+  div(class="container")
+    h1(class="quote") “Faithless is he that says farewell when the road darkens.”
+    h2(class="citation") ― J.R.R. Tolkien, The Fellowship of the Ring
 
-  p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit fugiat impedit totam veritatis iste officia alias laborum, adipisci repellat quaerat ipsum similique cum ab corrupti?
 
-  h2 Game Shelves
-  div
     h3: a(href=`/game_shelves/${shelves[0].id}`) Currently Playing
-    each game in games
-      a(href=`/games/${game.id}`)
-        img(src= game.image)
-  each shelf, index in shelves
-    div
-      if index > 0
-        h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
-        if index > 2
-          form(action=`/game_shelves/${shelf.id}/delete` method="post")
-            button(type="submit" name="shelfId" value= shelf.id) Delete Shelf
+    div(class="current")
+      each game in games
+        a(class="game" href=`/games/${game.id}`)
+          img(src= game.image)
 
-  div(id="createShelf")
-    h3 Create a Shelf
-    form(action="/game_shelves/new" method="post")
-      label(for="shelfName") Shelf Name
-      input(type="text" name="shelfName")
-      button Submit
+    h2 Game Shelves
+    each shelf, index in shelves
+      if index > 0
+        div(class="custom")
+          h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
+          if index > 2
+            form(action=`/game_shelves/${shelf.id}/delete` method="post")
+              button(class="create" type="submit" name="shelfId" value= shelf.id) Delete Shelf
+
+    div(id="createShelf")
+      h3 Create a Shelf
+      form(action="/game_shelves/new" method="post")
+        label(for="shelfName") Shelf Name
+        input(type="text" name="shelfName")
+        button Submit

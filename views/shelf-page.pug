@@ -2,5 +2,8 @@ extends layout.pug
 
 block content
   h2= shelf.shelfName
-  each game in games
-    div= game.title
+  div
+    each game in games
+      img(src= game.image)
+      form(action=`/game_shelves/${shelf.id}/games/${game.id}/delete` method="post")
+        button Delete Game

@@ -3,12 +3,13 @@ const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 const { csrfProtection, asyncHandler } = require("./utils");
 const { logUserOut, logUserIn } = require("../auth");
+const { requireAuth } = require('../auth');
 const db = require("../db/models");
 
 const router = express.Router();
 
 /* GET users listing. */
-router.get("/:id(\\d+)", async function (req, res, next) {
+router.get("/:id(\\d+)", requireAuth, async function (req, res, next) {
   const id = req.params.id;
   const user = await db.User.findByPk(id);
   const shelves = await db.GameShelf.findAll({ where: { userId: user.id } });

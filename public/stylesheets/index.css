@@ -39,6 +39,8 @@ body {
   border: none;
   text-align: center;
   padding: 10px 10px;
+  font-size: 1rem;
+  border-radius: 1rem;
 }
 nav {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -59,13 +61,14 @@ nav li {
   display: block;
   position: relative;
   text-decoration: none;
+  text-align: center;
+  font-weight: bolder;
   transition-duration: 0.5s;
   padding: 1rem;
-  float: left;
 }
 
 nav li a {
-  color: #f0a500;
+  /* color: #f0a500; */
 }
 
 nav li:hover,
@@ -80,8 +83,8 @@ nav ul li ul {
   position: absolute;
   margin-top: 1rem;
   left: 0;
-  opacity: 5;
   display: none;
+  border-radius: 1rem;
 }
 
 nav ul li:hover > ul {

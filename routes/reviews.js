@@ -28,7 +28,7 @@ router.post('/:gameId(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
 }));
 
 // get form to update specific review
-router.get('/:gameId(\\d+)/:reviewId(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req, res) => {
+router.get('/:gameId(\\d+)/:reviewId(\\d+)/update', requireAuth, csrfProtection, asyncHandler(async(req, res) => {
     const gameId = req.params.gameId;
     const reviewId = req.params.reviewId;
     const game = await Game.findByPk(gameId);
@@ -37,17 +37,20 @@ router.get('/:gameId(\\d+)/:reviewId(\\d+)', requireAuth, csrfProtection, asyncH
     if (review.userId === userId) {
         res.render('update-review', {csrfToken: req.csrfToken(), game, gameId, reviewId});
     } else {
-        res.send('Please log in as the owner of this review');
+        // front end need to have pop up telling user to log in as owner of review
+        // res.send('Please log in as the owner of this review');
         res.redirect('/users/login');
     }
-}))
+}));
 
 // patch for specific review for specific game
 // still needs work
-router.post('/:id(\\d+)/update', csrfProtection, asyncHandler(async(req, res) => {
-    requireAuth(req, res, next);
-    const reviewId = req.params.id;
+router.post('/:gameId(\\d+)/:reviewId(\\d+)/update', csrfProtection, asyncHandler(async(req, res) => {
+    const gameId = req.params.gameId;
+    const reviewId = req.params.reviewId;
     const userId = req.session.auth.userId;
-}))
+    const review = await Review.findByPk(reviewId)
+    
+}));
 
 module.exports = router;

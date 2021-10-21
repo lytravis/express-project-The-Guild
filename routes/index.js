@@ -8,9 +8,12 @@ const db = require("../db/models");
 const router = express.Router();
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "a/A Express Skeleton Home" });
-});
+router.get("/", asyncHandler(async (req, res, next) => {
+  const actionGames = await db.Game.findAll({ where: { genreId: 3 }});
+  const sportsGames = await db.Game.findAll({ where: { genreId: 4} });
+  const rolePlayingGames = await db.Game.findAll({ where: { genreId: 1} });
+  res.render("index", { title: "a/A Express Skeleton Home", actionGames, sportsGames, rolePlayingGames });
+}));
 
 // Demo User
 router.post(

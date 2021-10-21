@@ -1,11 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
 
-h1 {
-  color: #555555;
+h1, h2 {
+  color: #DAE5E6;
+  padding: 15px;
 }
 
 body {
   background-color: #082032;
+  color: #DAE5E6;
+}
+
+.games {
+  padding: 20px;
+  display:flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  scroll-behavior: smooth;
 }
 
 .welcome {

@@ -3,6 +3,7 @@ html
   head
       block head
         title= title
+        link(rel='stylesheet' href='/stylesheets/index.css')
         link(rel='stylesheet' href='/stylesheets/reset.css')
         link(rel='stylesheet' href='/stylesheets/header.css')
         link(rel='stylesheet' href='/stylesheets/footer.css')
@@ -30,7 +31,7 @@ html
             button Demo Login
 
     if locals.authenticated
-      span() Welcome #{user.firstName} #{user.lastName}
+      span(class="welcome") Welcome #{user.firstName} #{user.lastName}
       //- form(action='/logout', method='post')
       //-   button(type='submit') Logout
 

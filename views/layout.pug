@@ -12,7 +12,9 @@ html
         link(rel="icon", href="")
 
   body
-    nav(id="header")
+
+
+    header(id="header")
       #header-logo
         a(href="/") The Guild
       #header-navbar
@@ -22,13 +24,31 @@ html
         a.games(href="/games") Games
         if locals.authenticated
           a.nav-gameShelves(href=`/users/${user.id}`) Game Shelves
-          form(action="/logout", method="post" class='logout-btn')
-            button(type="submit") Logout
+          //- form(action="/logout", method="post" class='logout-btn')
+          //-   button(type="submit") Logout
+          nav(class="nav-dropdown")
+            ul
+              li
+                a(href="/users/") Account
+                ul(class="dropdown")
+                  form(action="/logout", method="post" class='logout-btn')
+                    button(type="submit") Logout
         else
-          a(href='/users/login') Login
-          a(href='/users/register') Register
-          form(action="/demo" method='post')
-            button Demo Login
+          nav(class="nav-dropdown")
+            ul
+              li
+                a(href="/users/") Account
+                ul(class="dropdown")
+                  form(action="/demo" method='post')
+                    button Demo Login
+                  li
+                    a(href="/users/login") Login
+                  li
+                    a(href="/users/register") Register
+          //- a(href='/users/login') Login
+          //- a(href='/users/register') Register
+          //- form(action="/demo" method='post')
+          //-   button Demo Login
 
     if locals.authenticated
       span(class="welcome") Welcome #{user.firstName} #{user.lastName}

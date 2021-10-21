@@ -16,8 +16,13 @@ body {
   padding: 10px 20px;
   display: flex;
   flex-wrap: nowrap;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   scroll-behavior: smooth;
+}
+
+.games-link {
+  padding: 10px 20px;
 }
 
 .game {
@@ -91,4 +96,26 @@ nav ul li:hover > ul {
   display: block;
   visibility: visible;
   opacity: 1;
+}
+
+.welcome {
+  margin-left: 25px;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+
+.games::-webkit-scrollbar-track {
+  border-radius: 0.125rem;
+  background-color: lightgray;
+}
+
+.games::-webkit-scrollbar {
+  width: 0.25rem;
+  border-radius: 0.125rem;
+}
+
+.games::-webkit-scrollbar-thumb {
+  border-radius: 0.125rem;
+  background-color: gray;
 }

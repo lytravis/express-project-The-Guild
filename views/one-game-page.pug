@@ -1,16 +1,16 @@
 extends layout.pug
 
 block content
-    h2= game.name
-    div(class='game-image')
-        img(class='img' src=game.image, alt=game.name)
-    div(class='div-description')
-        p(class='description') #{game.description}
-    div(class='reviews')
+    h1= game.title
+    div(id='game-image')
+        img(id='img' src=game.image, alt=game.name)
+    div(id='div-description')
+        p(id='description') #{game.description}
+    div(id='div-reviews')
         each review in reviews
-            div
-                p #{review.rating}
-                p #{review.content}
+            div(id='review')
+                p(id='rating') #{review.rating}
+                p(id='content') #{review.content}
     form(action=`/game_shelves/${userId}/add` method="post")
         if locals.authenticated
             label(for="addToShelf") Add To Shelf

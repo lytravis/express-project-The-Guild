@@ -35,7 +35,7 @@ router.get('/:gameId(\\d+)/:reviewId(\\d+)/update', requireAuth, csrfProtection,
     const userId = req.session.auth.userId;
     const review = await Review.findByPk(reviewId);
     if (review.userId === userId) {
-        res.render('update-review', {csrfToken: req.csrfToken(), game, gameId, reviewId});
+        res.render('update-review', {csrfToken: req.csrfToken(), review, game, gameId, reviewId});
     } else {
         // front end need to have pop up telling user to log in as owner of review
         // res.send('Please log in as the owner of this review');
@@ -44,13 +44,16 @@ router.get('/:gameId(\\d+)/:reviewId(\\d+)/update', requireAuth, csrfProtection,
 }));
 
 // patch for specific review for specific game
-// still needs work
 router.post('/:gameId(\\d+)/:reviewId(\\d+)/update', csrfProtection, asyncHandler(async(req, res) => {
     const gameId = req.params.gameId;
     const reviewId = req.params.reviewId;
-    const userId = req.session.auth.userId;
+    const { content, rating } = req.body
     const review = await Review.findByPk(reviewId)
-    
+    review.update({
+        content,
+        rating
+    });
+    res.redirect(`/games/${gameId}`);
 }));
 
 module.exports = router;

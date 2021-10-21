@@ -3,8 +3,10 @@ extends layout.pug
 block content
     h3 What do you think of the game?
     if locals.authenticated
-        form(action="/games/:gameId/reviews", method="post")
+        form(action=`/reviews/${gameId}`, method="post")
             input(type='hidden' name='_csrf' value=csrfToken)
+            div
+                img(src=game.image)
             div
                 label(for='rating') Leave a rating from 1-5 stars!
                 select(name='rating' type='select' placeholder='Rating' required)
@@ -16,5 +18,7 @@ block content
             div
                 label(for='content') Leave your thoughts!
                 textarea(name='content' required)
+            div
+                button(type="submit") Submit
     else
         a(href='/users/login') Login to post a review!

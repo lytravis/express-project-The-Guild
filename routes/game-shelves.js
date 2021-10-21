@@ -51,7 +51,20 @@ router.post("/:id(\\d+)/add", asyncHandler(async (req, res) => {
     gameShelvesId,
     gameId
   })
-  res.redirect(`/users/${userId}`);
+  res.redirect(`/game_shelves/${gameShelvesId}`);
 }));
+
+router.post("/:id(\\d+)/games/:gameId(\\d+)/delete",
+  asyncHandler(async (req, res) => {
+    const { id, gameId } = req.params;
+    const game = await db.GameGameShelf.findOne({
+      where: {
+        gameShelvesId: id,
+        gameId
+      }
+    })
+    await game.destroy();
+    res.redirect(`/game_shelves/${id}`);
+  }));
 
 module.exports = router;

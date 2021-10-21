@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
+
 #header {
   display: flex;
   align-items: center;
@@ -7,16 +9,18 @@
 }
 
 #header-logo {
-  color: blue;
+  /* color: white; */
   font-weight: 1000;
-  font-size: 2rem;
+  font-size: 30px;
   margin-left: 80px;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 #header-navbar {
   display: flex;
   align-items: center;
   margin-left: auto;
+  padding: 5px;
 }
 
 .nav-links {

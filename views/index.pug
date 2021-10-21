@@ -7,22 +7,25 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1 Start Your Adventure...
+  h1 Start Your Next Adventure...
 
   h2 Action/Adventure Games
   div(class="games")
     each game in actionGames
-      a(href=`/games/${game.id}`)
-        img(src=`${game.image}`)
+      div(class="game")
+        a(href=`/games/${game.id}`)
+          img(src=`${game.image}`)
 
   h2 Sports Games
   div(class="games")
     each game in sportsGames
-      a(href=`/games/${game.id}`)
-        img(src=`${game.image}`)
+      div(class="game")
+        a(href=`/games/${game.id}`)
+          img(src=`${game.image}`)
 
   h2 Role Playing Games
   div(class="games")
     each game in rolePlayingGames
-      a(href=`/games/${game.id}`)
-        img(src=`${game.image}`)
+      div(class="game")
+        a(href=`/games/${game.id}`)
+          img(src=`${game.image}`)

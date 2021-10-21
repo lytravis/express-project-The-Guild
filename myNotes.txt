@@ -4,7 +4,8 @@ TASKS
 - setting home page
     - div containers
 
-    
+    - conditional log-out button
+
     - display 'top' games of genres
     - create logo for app (potential hyperlink), used for favicon
 - search feature
@@ -17,6 +18,7 @@ TASKS
         - POST
         - create form
     - reviews
+        - PATCH reviews
     - genre
         - search from genre?
         - relational?

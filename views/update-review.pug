@@ -1,9 +1,9 @@
 extends layout.pug
 
 block content
-    h3 What do you think of the game?
+    h3 Update your review!
     if locals.authenticated
-        form(action=`/reviews/${gameId}`, method="post")
+        form(action=`/reviews/${gameId}/${reviewId}`, method="post")
             input(type='hidden' name='_csrf' value=csrfToken)
             div
                 img(src=game.image)

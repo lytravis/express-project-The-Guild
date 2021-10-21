@@ -4,6 +4,7 @@ block content
   h2= shelf.shelfName
   div
     each game in games
-      img(src= game.image)
+      a(href=`/games/${game.id}`)
+        img(src= game.image)
       form(action=`/game_shelves/${shelf.id}/games/${game.id}/delete` method="post")
         button Delete Game

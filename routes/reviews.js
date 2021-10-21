@@ -1,29 +1,53 @@
 const express = require('express');
 const { asyncHandler, csrfProtection } = require('./utils');
 const router = express.Router();
-const { Review, Game } = require('../db/models')
+const { Review, Game } = require('../db/models');
+const { requireAuth } = require('../auth');
 
-// get all reviews for specific game
-router.get('/', csrfProtection, (req, res)=>{
-    res.render('review-form', {csrfToken: req.csrfToken()})
-});
+// get review form for specific game
+router.get('/:gameId(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
+    const gameId = req.params.gameId;
+    console.log(gameId)
+    const game = await Game.findByPk(gameId)
+    res.render('review-form', {csrfToken: req.csrfToken(), gameId, game})
+}));
 
 // post review for specific game
-router.post('/', csrfProtection, asyncHandler(async(req, res)=>{
+router.post('/:gameId(\\d+)', csrfProtection, asyncHandler(async(req, res)=>{
     const userId = req.session.auth.userId;
     const gameId = req.params.gameId;
+    console.log(gameId)
     const { rating, content } = req.body;
-    const game = await Game.findByPk(userId);
     await Review.create({
         userId,
         gameId,
         rating,
         content
     });
-    const reviews = await Review.findAll({
-        where: {gameId}
-    });
-    res.render('one-game-page', {reviews, game});
+    res.redirect(`/games/${gameId}`)
 }));
+
+// get form to update specific review
+router.get('/:gameId(\\d+)/:reviewId(\\d+)', requireAuth, csrfProtection, asyncHandler(async(req, res) => {
+    const gameId = req.params.gameId;
+    const reviewId = req.params.reviewId;
+    const game = await Game.findByPk(gameId);
+    const userId = req.session.auth.userId;
+    const review = await Review.findByPk(reviewId);
+    if (review.userId === userId) {
+        res.render('update-review', {csrfToken: req.csrfToken(), game, gameId, reviewId});
+    } else {
+        res.send('Please log in as the owner of this review');
+        res.redirect('/users/login');
+    }
+}))
+
+// patch for specific review for specific game
+// still needs work
+router.post('/:id(\\d+)/update', csrfProtection, asyncHandler(async(req, res) => {
+    requireAuth(req, res, next);
+    const reviewId = req.params.id;
+    const userId = req.session.auth.userId;
+}))
 
 module.exports = router;

@@ -17,12 +17,12 @@ html
 
     header(id="header")
       #header-logo
-        a(href="/") The Guild
+        a.guild-logo(href="/") The Guild
       #header-navbar
         form(class="search-bar" action="/search" method="post" )
           input(type="text" name="search" placeholder="Find a game")
           button(class="searchButton" type="submit") 🔍
-        a.games(href="/games") Games
+        a.games-link(href="/games") Games
         if locals.authenticated
           a.nav-gameShelves(href=`/users/${user.id}`) Game Shelves
           //- form(action="/logout", method="post" class='logout-btn')

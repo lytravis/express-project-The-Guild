@@ -15,5 +15,5 @@ block content
         label(for="addToShelf") Add To Shelf
         select(name="addToShelf")
             each shelf in gameshelves
-                option(value= shelf.id)= shelf.shelfName
+                option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
         button Add

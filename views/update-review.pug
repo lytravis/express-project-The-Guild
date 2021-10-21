@@ -1,0 +1,24 @@
+extends layout.pug
+
+block content
+    h3 Update your review!
+    if locals.authenticated
+        form(action=`/reviews/${gameId}/${reviewId}`, method="post")
+            input(type='hidden' name='_csrf' value=csrfToken)
+            div
+                img(src=game.image)
+            div
+                label(for='rating') Leave a rating from 1-5 stars!
+                select(name='rating' type='select' placeholder='Rating' required)
+                    option(value=1) 1 star
+                    option(value=2) 2 stars
+                    option(value=3) 3 stars
+                    option(value=4) 4 stars
+                    option(value=5) 5 stars
+            div
+                label(for='content') Leave your thoughts!
+                textarea(name='content' required)
+            div
+                button(type="submit") Submit
+    else
+        a(href='/users/login') Login to post a review!

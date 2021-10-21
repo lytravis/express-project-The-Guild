@@ -1,7 +1,8 @@
 const express = require('express');
 const { asyncHandler, csrfProtection } = require('./utils');
 const router = express.Router();
-const { Review, Game } = require('../db/models')
+const { Review, Game } = require('../db/models');
+const { requireAuth } = require('../auth');
 
 // get all reviews for specific game
 router.get('/', csrfProtection, (req, res)=>{
@@ -25,5 +26,16 @@ router.post('/', csrfProtection, asyncHandler(async(req, res)=>{
     });
     res.render('one-game-page', {reviews, game});
 }));
+
+router.get('/:id(\\d+)/update', csrfProtection, (req, res) => {
+    res.render('review-form', {csrfToken: req.csrfToken()})
+})
+
+// patch for specific review for specific game
+router.post('/:id(\\d+)/update', csrfProtection, asyncHandler(async(req, res) => {
+    requireAuth(req, res, next);
+    const reviewId = req.params.id;
+    const userId;
+}))
 
 module.exports = router;

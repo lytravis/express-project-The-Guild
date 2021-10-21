@@ -1,14 +1,17 @@
 extends layout.pug
 
 block content
-    h3 Update your review!
+    h2 Update your review!
     if locals.authenticated
-        form(action=`/reviews/${gameId}/${reviewId}`, method="post")
+        form(action=`/reviews/${gameId}/${reviewId}/update`, method="post")
             input(type='hidden' name='_csrf' value=csrfToken)
             div
                 img(src=game.image)
             div
-                label(for='rating') Leave a rating from 1-5 stars!
+                p #{review.rating}
+                p #{review.content}
+            div
+                label(for='rating') Change your rating!
                 select(name='rating' type='select' placeholder='Rating' required)
                     option(value=1) 1 star
                     option(value=2) 2 stars
@@ -16,7 +19,7 @@ block content
                     option(value=4) 4 stars
                     option(value=5) 5 stars
             div
-                label(for='content') Leave your thoughts!
+                label(for='content') Did your opinion of the game change?
                 textarea(name='content' required)
             div
                 button(type="submit") Submit

@@ -1,0 +1,54 @@
+body {
+  background-color: #082032;
+  color: #DAE5E6;
+}
+
+.container {
+  margin: 30px;
+}
+
+h1, h2, h3 {
+  color: #DAE5E6;
+  padding: 15px;
+  font-family: "Cinzel Decorative", cursive;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 15px;
+}
+
+.quote {
+  margin: 10px 50px 0px;
+  text-align: center;
+}
+.citation {
+  margin-left: 200px;
+}
+
+.current {
+  padding: 10px 20px;
+  display:flex;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.game {
+  margin: 5px;
+}
+
+.custom {
+  display: flex;
+}
+
+.create {
+  margin-top: 15px;
+}
+
+.shelf-container {
+  display: flex;
+}

@@ -12,8 +12,14 @@ router.get("/:id(\\d+)", async function (req, res, next) {
   const id = req.params.id;
   const user = await db.User.findByPk(id);
   const shelves = await db.GameShelf.findAll({ where: { userId: user.id } });
-  
-  res.render("user-page", { title: `${user.firstName}'s page`, shelves, user });
+  const games = await db.Game.findAll({
+    include: [{
+      model: db.GameShelf,
+      where: { userId: id, shelfName: "Currently Playing" }
+    }]
+  })
+
+  res.render("user-page", { title: `${user.firstName}'s page`, shelves, user, games });
 });
 
 
@@ -90,7 +96,7 @@ router.post(
   csrfProtection,
   userValidators,
   asyncHandler(async (req, res, next) => {
-    const { firstName, lastName, email, password, confirmPassword } = req.body;
+    const { firstName, lastName, email, password } = req.body;
 
     const user = db.User.build({
       email,
@@ -108,7 +114,7 @@ router.post(
       await db.GameShelf.create({ shelfName: 'Currently Playing', userId: user.id });
       await db.GameShelf.create({ shelfName: 'To Play', userId: user.id });
       await db.GameShelf.create({ shelfName: 'Played', userId: user.id });
-      res.redirect("/");
+      res.redirect(`/users/${user.id}`);
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
       res.render("user-register", {

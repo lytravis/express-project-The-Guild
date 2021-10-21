@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
   const shelfId = req.params.id;
+  const userId = req.session.auth.userId;
   const shelf = await db.GameShelf.findByPk(shelfId);
   const games = await db.Game.findAll({
     include: [{
@@ -12,13 +13,13 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
       where: { id: shelfId }
     }]
   })
-  res.render("shelf-page", { games, shelf });
+  res.render("shelf-page", { games, shelf, userId });
 }));
 
 router.post("/:id(\\d+)/delete",
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    userId = req.session.auth.userId;
+    const userId = req.session.auth.userId;
 
     const shelf = await db.GameShelf.findOne({ where: { id } });
     await shelf.destroy();

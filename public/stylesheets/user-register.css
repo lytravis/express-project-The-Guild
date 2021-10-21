@@ -1,0 +1,26 @@
+#register-page {
+  display: flex;
+}
+
+.register-logo {
+  flex: 50%;
+  height: 100%;
+}
+
+.register-form {
+  flex: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.register-input {
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.register-btn {
+  width: 55%;
+}

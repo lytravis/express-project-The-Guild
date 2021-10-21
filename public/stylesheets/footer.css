@@ -1,43 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
-
 #footer {
-  /* position: sticky; */
+  position: relative;
   bottom: 0;
   width: 100%;
   height: fit-content;
-  /* padding: 9px; */
+  min-height: 10px;
   background-color: #334756;
 }
-
-/* .git-links {
-  width: 30px;
-  height: 30px;
-}
-
-.linkedin-links {
-  width: 30px;
-  height: 30px;
-} */
 
 .footer-info {
   display: flex;
   flex-direction: rows;
   justify-content: flex-end;
   width: 100%;
+  justify-content: space-between;
 }
 
 .footer-img {
   height: 2rem;
   width: 2rem;
   margin: 10px 10px;
-  /* padding: 10px; */
-  /* display: flex;
-  flex-direction: row;
-  justify-content: flex-end; */
-}
-
-.footer-name {
-  padding: 0px 220px 0px 0px;
-  text-align: center;
-  margin: 10px;
 }

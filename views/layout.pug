@@ -32,7 +32,7 @@ html
                 a(href="/users/") Account
                 ul(class="dropdown")
                   form(action="/logout", method="post" class='logout-btn')
-                    button(type="submit") Logout
+                    button(class="button" type="submit") Logout
         else
           nav(class="nav-dropdown")
             ul
@@ -40,7 +40,7 @@ html
                 a(href="/users/") Account
                 ul(class="dropdown")
                   form(action="/demo" method='post')
-                    button Demo Login
+                    button(class="button" type="submit") Demo Login
                   li
                     a(href="/users/login") Login
                   li

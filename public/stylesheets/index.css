@@ -1,19 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
 
-h1, h2 {
-  color: #DAE5E6;
+h1,
+h2 {
+  color: #dae5e6;
   padding: 15px;
   font-family: "Cinzel Decorative", cursive;
 }
 
 body {
   background-color: #082032;
-  color: #DAE5E6;
+  color: #dae5e6;
 }
 
 .games {
   padding: 10px 20px;
-  display:flex;
+  display: flex;
   flex-wrap: nowrap;
   overflow: scroll;
   scroll-behavior: smooth;
@@ -32,6 +33,13 @@ body {
   font-weight: bold;
 }
 
+.button {
+  background-color: #555555;
+  color: #f0a500;
+  border: none;
+  text-align: center;
+  padding: 10px 10px;
+}
 nav {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
@@ -42,18 +50,18 @@ nav a {
 
 nav ul {
   background-color: #555555;
-  list-style: none;
   margin: 0;
+  list-style: none;
   padding-left: 0;
 }
 
 nav li {
   display: block;
-  transition-duration: 0.5s;
-  float: left;
-  padding: 1rem;
   position: relative;
   text-decoration: none;
+  transition-duration: 0.5s;
+  padding: 1rem;
+  float: left;
 }
 
 nav li a {
@@ -61,37 +69,23 @@ nav li a {
 }
 
 nav li:hover,
-nav li:focus-within {
+.button:hover {
   background: #334756;
   cursor: pointer;
-}
-
-nav li:focus-within a {
-  outline: none;
 }
 
 nav ul li ul {
   background: 3334756;
   visibility: hidden;
-  opacity: 10;
-  min-width: 5rem;
   position: absolute;
-  transition: all 0.5s ease;
   margin-top: 1rem;
   left: 0;
+  opacity: 5;
   display: none;
 }
 
-nav ul li:hover > ul,
-nav ul li:focus-within > ul,
-nav ul li ul:hover,
-nav ul li ul:focus {
+nav ul li:hover > ul {
+  display: block;
   visibility: visible;
   opacity: 1;
-  display: block;
-}
-
-nav ul li ul li {
-  clear: both;
-  width: 100%;
 }

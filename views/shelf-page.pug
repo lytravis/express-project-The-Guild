@@ -1,5 +1,6 @@
 extends layout.pug
 
 block content
+  h2= shelf.shelfName
   each game in games
-    div Test Text
+    div= game.title

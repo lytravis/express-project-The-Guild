@@ -45,7 +45,8 @@ h3 {
   padding: 10px 20px;
   display: flex;
   flex-wrap: nowrap;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   scroll-behavior: smooth;
 }
 
@@ -67,4 +68,19 @@ h3 {
 
 .delete-button {
   background-color: #347fc4;
+}
+
+.current::-webkit-scrollbar-track {
+  border-radius: 0.125rem;
+  background-color: lightgray;
+}
+
+.current::-webkit-scrollbar {
+  width: 0.25rem;
+  border-radius: 0.125rem;
+}
+
+.current::-webkit-scrollbar-thumb {
+  border-radius: 0.125rem;
+  background-color: gray;
 }

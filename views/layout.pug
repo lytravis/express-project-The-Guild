@@ -24,12 +24,12 @@ html
         form(class="search-bar" action="/search" method="post" )
           input(class="search-input" type="text" name="search" placeholder="Find a game")
           <button class="searchBtn" type="submit"><i class="fa fa-search"></i></button>
-        a.games-link(href="/games") Games
+        a.games-link(href="/games") Browse Games
         if locals.authenticated
           if user.id !== 1
-            a.nav-gameShelves(href=`/users/${user.id}`) Game Shelves
+            a.nav-gameShelves(href=`/users/${user.id}`) My Games
           else
-            a.nav-gameShelves(href="/demo") Game Shelves
+            a.nav-gameShelves(href="/demo") My Games
           //- form(action="/logout", method="post" class='logout-btn')
           //-   button(type="submit") Logout
           nav(class="nav-dropdown")

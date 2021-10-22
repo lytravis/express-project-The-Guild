@@ -1,11 +1,11 @@
 body {
   background-color: #082032;
-  color: #DAE5E6;
+  color: #dae5e6;
 }
 
 .big-container {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 
 .container {
@@ -13,11 +13,14 @@ body {
   margin: 15px;
   display: flex;
   flex-direction: column;
-  align-items:center
+  align-items: center;
+  /* background-color: white; */
 }
 
-h1, h2, h3 {
-  color: #DAE5E6;
+h1,
+h2,
+h3 {
+  color: #dae5e6;
   padding: 15px;
   font-family: "Cinzel Decorative", cursive;
 }
@@ -40,7 +43,7 @@ h3 {
 
 .current {
   padding: 10px 20px;
-  display:flex;
+  display: flex;
   flex-wrap: nowrap;
   overflow: scroll;
   scroll-behavior: smooth;
@@ -63,5 +66,5 @@ h3 {
 }
 
 .delete-button {
-  background-color: #347FC4;
+  background-color: #347fc4;
 }

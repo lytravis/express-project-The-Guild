@@ -1,7 +1,7 @@
 extends layout.pug
 
 block content
-    body
+    body(class="games-page-body")
         div(class="games-list")
             each game in games
                 a(href=`/games/${game.id}`)

@@ -65,6 +65,42 @@ module.exports = {
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          gameShelvesId: 4,
+          gameId: 34,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          gameShelvesId: 4,
+          gameId: 36,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          gameShelvesId: 4,
+          gameId: 37,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          gameShelvesId: 4,
+          gameId: 38,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          gameShelvesId: 3,
+          gameId: 39,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          gameShelvesId: 3,
+          gameId: 40,
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
       {}
     );

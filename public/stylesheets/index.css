@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
+
 h1,
 h2 {
   color: #dae5e6;
@@ -25,12 +27,14 @@ body {
   padding: 10px 20px;
   text-decoration: none;
   font-weight: bold;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 .nav-gameShelves {
   padding: 10px 20px;
   text-decoration: none;
   font-weight: bold;
+  font-family: "Cinzel Decorative", cursive;
 }
 
 .game {

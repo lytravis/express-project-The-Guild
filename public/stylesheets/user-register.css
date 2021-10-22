@@ -45,3 +45,7 @@
   box-sizing: border-box;
   border-radius: 1rem;
 }
+
+.register-body {
+  background-color: white;
+}

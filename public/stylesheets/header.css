@@ -75,4 +75,5 @@
 .nav-login {
   font-weight: bold;
   font-family: "Cinzel Decorative", cursive;
+  pointer-events: none;
 }

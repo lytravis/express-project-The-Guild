@@ -92,10 +92,6 @@ nav li {
   padding: 1rem;
 }
 
-nav li a {
-  /* color: #f0a500; */
-}
-
 nav li:hover,
 .button:hover {
   background: #334756;
@@ -139,6 +135,7 @@ nav ul li:hover > ul {
   background-color: gray;
 }
 
+
 #review-container {
   display: flex;
   flex-direction: column;
@@ -179,4 +176,20 @@ nav ul li:hover > ul {
 
 .review-drop-down {
   margin-left: 15px;
+
+.games-page-body {
+  background-color: white;
+}
+
+.main-header {
+  font-size: 20px;
+}
+
+.main-caption {
+  font-style: italic;
+}
+
+.welcome {
+  color: #f0a500;
+  font-size: 15px;
 }

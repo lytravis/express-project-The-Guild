@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     GameShelf.belongsTo(models.User, { foreignKey: 'userId' }),
-    GameShelf.belongsToMany(models.Game, columnMapping)
+    GameShelf.belongsToMany(models.Game, columnMapping),
+    GameShelf.hasMany(models.GameGameShelf, {foreignKey: 'gameShelvesId', onDelete: 'CASCADE', hooks: true})
   };
   return GameShelf;
 };

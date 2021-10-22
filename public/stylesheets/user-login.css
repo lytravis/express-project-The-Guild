@@ -23,9 +23,11 @@
 }
 
 .login-btn {
-  width: 55%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
+  font-size: 1rem;
+  font-weight: bolder;
   background-color: black;
   color: white;
 }

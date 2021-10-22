@@ -23,7 +23,11 @@
 }
 
 .register-btn {
-  width: 55%;
+  width: 50%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 8px 0;
   background: black;
   color: white;
 }

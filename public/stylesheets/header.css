@@ -69,3 +69,7 @@
 .searchBtn:hover {
   background: #f0a500;
 }
+
+.nav-login {
+  font-weight: bold;
+}

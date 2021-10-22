@@ -23,6 +23,14 @@ body {
 
 .games-link {
   padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-gameShelves {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .game {
@@ -103,7 +111,6 @@ nav ul li:hover > ul {
   font-size: 20px;
   padding-top: 10px;
 }
-
 
 .games::-webkit-scrollbar-track {
   border-radius: 0.125rem;

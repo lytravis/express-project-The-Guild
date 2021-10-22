@@ -16,8 +16,11 @@
     margin-right: 150px;
 }
 
+body {
+    background-color: #082032;
+}
+
 /* #div-reviews {
     display: flex;
     border: black solid 2px;
 } */
-

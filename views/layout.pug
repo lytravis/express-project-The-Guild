@@ -24,7 +24,10 @@ html
           button(class="searchBtn" type="submit") 🔍
         a.games-link(href="/games") Games
         if locals.authenticated
-          a.nav-gameShelves(href=`/users/${user.id}`) Game Shelves
+          if user.id !== 1
+            a.nav-gameShelves(href=`/users/${user.id}`) Game Shelves
+          else
+            a.nav-gameShelves(href="/demo") Game Shelves
           //- form(action="/logout", method="post" class='logout-btn')
           //-   button(type="submit") Logout
           nav(class="nav-dropdown")

@@ -11,6 +11,8 @@ html
         link(rel='stylesheet' href='/stylesheets/user-register.css')
         link(rel="icon", href="")
         link(rel='stylesheet' href='/stylesheets/one-game-page.css')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
 
   body
 
@@ -21,7 +23,7 @@ html
       #header-navbar
         form(class="search-bar" action="/search" method="post" )
           input(class="search-input" type="text" name="search" placeholder="Find a game")
-          button(class="searchBtn" type="submit") 🔍
+          <button class="searchBtn" type="submit"><i class="fa fa-search"></i></button>
         a.games-link(href="/games") Games
         if locals.authenticated
           a.nav-gameShelves(href=`/users/${user.id}`) Game Shelves

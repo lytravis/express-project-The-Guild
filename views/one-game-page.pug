@@ -11,6 +11,9 @@ block content
             div(id='review')
                 p(id='rating') #{review.rating}
                 p(id='content') #{review.content}
+    div(id='div-review-button')
+        a(href=`/reviews/${game.id}`)
+            button(id='review-button') Leave a review!
     form(action=`/game_shelves/${userId}/add` method="post")
         if locals.authenticated
             label(for="addToShelf") Add To Shelf

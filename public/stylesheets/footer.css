@@ -1,5 +1,5 @@
 #footer {
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: fit-content;
@@ -12,7 +12,7 @@
   flex-direction: rows;
   justify-content: flex-end;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .footer-img {

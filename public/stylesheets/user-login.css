@@ -1,3 +1,7 @@
+body {
+  position: relative;
+}
+
 #login-page {
   display: flex;
 }
@@ -30,6 +34,20 @@
   font-weight: bolder;
   background-color: black;
   color: white;
+}
+
+.errors {
+  position: absolute;
+  top: 270px;
+  right: 230px;
+}
+
+.error-list {
+  list-style-type: none;
+}
+
+li {
+  font-size: 20px;
 }
 
 /* .login-register {

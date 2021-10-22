@@ -1,6 +1,11 @@
 extends layout.pug
 
 block content
+  div(class="reg-errors")
+        if errors
+            ul(class="reg-error-list")
+                each error in errors
+                    li= error
   div(id="register-page")
     img(class="register-logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
     form(class="register-form" action="/users/register" method="post")

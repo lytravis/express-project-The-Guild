@@ -36,3 +36,37 @@
 .guild-logo {
   font-size: 40px;
 }
+
+.search-bar {
+  box-sizing: border-box;
+  margin: auto;
+  max-width: 300px;
+}
+
+.search-input {
+  border: 1px solid #505355;
+  border-radius: 11px 0 0 11px;
+  width: 80%;
+  font-size: 14px;
+  padding: 8px;
+  float: left;
+  background: white;
+}
+
+.searchBtn {
+  border: 1px solid #505355;
+  border-radius: 0 11px 11px 0;
+  border-left: none;
+  float: left;
+  width: 20%;
+  padding: 8px;
+  background: #505355;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background: #f0a500;
+}
+

@@ -1,10 +1,14 @@
 extends layout.pug
 
+append head
+  link(rel="stylesheet" href="/stylesheets/user-page.css")
+
 block content
   h2= shelf.shelfName
-  div
+  div(class="big-container")
     each game in games
+     div(class="container")
       a(href=`/games/${game.id}`)
         img(src= game.image)
       form(action=`/game_shelves/${shelf.id}/games/${game.id}/delete` method="post")
-        button Delete Game
+        button(class="delete-button") Delete Game

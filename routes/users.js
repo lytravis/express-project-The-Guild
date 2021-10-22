@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 const { csrfProtection, asyncHandler } = require("./utils");
 const { logUserOut, logUserIn } = require("../auth");
-const { requireAuth } = require('../auth');
+const { requireAuth } = require("../auth");
 const db = require("../db/models");
 
 const router = express.Router();
@@ -14,15 +14,21 @@ router.get("/:id(\\d+)", requireAuth, async function (req, res, next) {
   const user = await db.User.findByPk(id);
   const shelves = await db.GameShelf.findAll({ where: { userId: user.id } });
   const games = await db.Game.findAll({
-    include: [{
-      model: db.GameShelf,
-      where: { userId: id, shelfName: "Currently Playing" }
-    }]
-  })
+    include: [
+      {
+        model: db.GameShelf,
+        where: { userId: id, shelfName: "Currently Playing" },
+      },
+    ],
+  });
 
-  res.render("user-page", { title: `${user.firstName}'s page`, shelves, user, games });
+  res.render("user-page", {
+    title: `${user.firstName}'s page`,
+    shelves,
+    user,
+    games,
+  });
 });
-
 
 router.get("/register", csrfProtection, (req, res) => {
   res.render("user-register", {
@@ -112,9 +118,12 @@ router.post(
       user.hashedPassword = hashedPassword;
       await user.save();
       logUserIn(req, res, user);
-      await db.GameShelf.create({ shelfName: 'Currently Playing', userId: user.id });
-      await db.GameShelf.create({ shelfName: 'To Play', userId: user.id });
-      await db.GameShelf.create({ shelfName: 'Played', userId: user.id });
+      await db.GameShelf.create({
+        shelfName: "Currently Playing",
+        userId: user.id,
+      });
+      await db.GameShelf.create({ shelfName: "To Play", userId: user.id });
+      await db.GameShelf.create({ shelfName: "Played", userId: user.id });
       res.redirect(`/users/${user.id}`);
     } else {
       const errors = validatorErrors.array().map((error) => error.msg);
@@ -152,7 +161,9 @@ router.post(
           return res.redirect(`/users/${user.id}`);
         }
       }
-      errors.push("Please enter a valid email and password");
+      errors.push(
+        "Sorry, we can't find an account with this email address. Please try again or create a new account."
+      );
     } else {
       errors = validatorErrors.array().map((error) => error.msg);
     }

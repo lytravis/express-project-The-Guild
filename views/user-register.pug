@@ -4,6 +4,10 @@ block content
   div(id="register-page")
     img(class="register-logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
     form(class="register-form" action="/users/register" method="post")
+      if errors
+                  ul(class="errors")
+                      each error in errors
+                          li= error
       input(type='hidden' name='_csrf' value=csrfToken)
       div
         label(for="firstName" )

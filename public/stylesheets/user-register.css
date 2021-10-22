@@ -31,3 +31,17 @@
   background: black;
   color: white;
 }
+
+.errors {
+  background: red;
+  color: white;
+  position: relative;
+  left: 200px;
+  padding: 15px 20px;
+  list-style: none;
+  justify-content: center;
+  width: 55%;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 1rem;
+}

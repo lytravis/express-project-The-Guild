@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
+@im50ort url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&display=swap");
 
@@ -7,6 +7,12 @@ h2 {
   color: #dae5e6;
   padding: 15px;
   font-family: "Cinzel Decorative", cursive;
+}
+
+h3 {
+  font-size: 25px;
+  font-family: "Cinzel Decorative", cursive;
+  margin-top: 30px;
 }
 
 body {
@@ -49,6 +55,7 @@ body {
 
 .welcome {
   font-weight: bold;
+  color: #dae5e6;
 }
 
 .button {
@@ -130,4 +137,46 @@ nav ul li:hover > ul {
 .games::-webkit-scrollbar-thumb {
   border-radius: 0.125rem;
   background-color: gray;
+}
+
+#review-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1000px;
+}
+
+.game-img {
+  margin: 50px;
+}
+
+.review-form {
+  margin: 10px;
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-text {
+  margin: 20px;
+}
+
+.review-button {
+  margin: 20px;
+  background-color: #dae5e6;
+  padding: 10px 40px;
+  border-radius: 5%;
+}
+
+.review-drop-down {
+  margin-left: 15px;
 }

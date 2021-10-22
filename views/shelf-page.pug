@@ -11,4 +11,4 @@ block content
       a(href=`/games/${game.id}`)
         img(src= game.image)
       form(action=`/game_shelves/${shelf.id}/games/${game.id}/delete` method="post")
-        button(class="delete-button") Delete Game
+        <button style="font-size:24px"> <i class="fa fa-trash-o"></i></button>

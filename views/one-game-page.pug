@@ -6,6 +6,13 @@ block content
         img(id='img' src=game.image, alt=game.name)
     div(id='div-description')
         p(id='description') #{game.description}
+    form(action=`/game_shelves/${userId}/add` method="post")
+        if locals.authenticated
+            label(for="addToShelf" id='addToShelf') Add To Shelf
+            select(name="addToShelf")
+                each shelf in gameshelves
+                    option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
+            button(id='addToShelfButton') Add
     div(id='div-reviews')
         each review in reviews
             div(id='review')
@@ -14,10 +21,3 @@ block content
     div(id='div-review-button')
         a(href=`/reviews/${game.id}`)
             button(id='review-button') Leave a review!
-    form(action=`/game_shelves/${userId}/add` method="post")
-        if locals.authenticated
-            label(for="addToShelf") Add To Shelf
-            select(name="addToShelf")
-                each shelf in gameshelves
-                    option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
-            button Add

@@ -26,11 +26,11 @@ h3 {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 35px;
 }
 
 h3 {
-  font-size: 15px;
+  font-size: 25px;
 }
 
 .quote {
@@ -84,3 +84,16 @@ h3 {
   border-radius: 0.125rem;
   background-color: gray;
 }
+#createShelf {
+  color: purple;
+}
+
+/* .createShelf {
+  border: 1px solid #505355;
+  border-radius: 11px 0 0 11px;
+  width: 80%;
+  font-size: 14px;
+  padding: 8px;
+  float: left;
+  background: black;
+} */

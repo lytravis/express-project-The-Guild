@@ -1,24 +1,29 @@
 extends layout.pug
 
+append head
+  link(rel="stylesheet" href="/stylesheets/index.css")
+
 block content
-    h3 What do you think of the game?
-    if locals.authenticated
-        form(action=`/reviews/${gameId}`, method="post")
-            input(type='hidden' name='_csrf' value=csrfToken)
-            div
-                img(src=game.image)
-            div
-                label(for='rating') Leave a rating from 1-5 stars!
-                select(name='rating' type='select' placeholder='Rating' required)
-                    option(value=1) 1 star
-                    option(value=2) 2 stars
-                    option(value=3) 3 stars
-                    option(value=4) 4 stars
-                    option(value=5) 5 stars
-            div
-                label(for='content') Leave your thoughts!
-                textarea(name='content' required)
-            div
-                button(type="submit") Submit
-    else
-        a(href='/users/login') Login to post a review!
+    div(id="review-container")
+        h3 What do you think of the game?
+        if locals.authenticated
+            form(class="review" action=`/reviews/${gameId}`, method="post")
+                input(type='hidden' name='_csrf' value=csrfToken)
+                div(class="game-img")
+                    a(href=`/games/${gameId}`)
+                        img(src=game.image)
+                div(class="review-form")
+                    label(for='rating') Leave a rating from 1-5 stars!
+                    select(class="review-drop-down" name='rating' type='select' placeholder='Rating' required)
+                        option(value=1) 1 star
+                        option(value=2) 2 stars
+                        option(value=3) 3 stars
+                        option(value=4) 4 stars
+                        option(value=5) 5 stars
+                div(class="submit-form")
+                    label(for='content' class="submit-text") Leave your thoughts!
+                    textarea(name='content' rows="8" cols="70" required)
+                div
+                    button(class="review-button" type="submit") Submit
+        else
+            a(href='/users/login') Login to post a review!

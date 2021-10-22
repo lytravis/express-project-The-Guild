@@ -20,4 +20,4 @@ block content
             select(name="addToShelf")
                 each shelf in gameshelves
                     option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
-            button Add
+            <button style="font-size:24px"><i class="fa fa-plus-square" aria-hidden="true"></i></button>

@@ -20,8 +20,8 @@ html
         a.guild-logo(href="/") The Guild
       #header-navbar
         form(class="search-bar" action="/search" method="post" )
-          input(type="text" name="search" placeholder="Find a game")
-          button(class="searchButton" type="submit") 🔍
+          input(class="search-input" type="text" name="search" placeholder="Find a game")
+          button(class="searchBtn" type="submit") 🔍
         a.games-link(href="/games") Games
         if locals.authenticated
           a.nav-gameShelves(href=`/users/${user.id}`) Game Shelves

@@ -12,15 +12,23 @@
 }
 
 #description {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 700px;
+    margin-right: 700px;
 }
 
 body {
     background-color: #082032;
+    color: white;
 }
 
-/* #div-reviews {
-    display: flex;
+#review {
+    /* display: flex; */
     border: black solid 2px;
-} */
+    padding: 70px;
+    justify-content: center;
+}
+
+#rating {
+    font-size: 20px;
+
+}

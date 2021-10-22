@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
     const columnMapping = {
       through: 'GameGameShelf',
       otherKey: 'gameShelvesId',
-      foreignKey: 'gameId'
+      foreignKey: 'gameId',
     }
 
     Game.belongsTo(models.Genre, { foreignKey: 'genreId' }),

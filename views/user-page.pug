@@ -23,10 +23,10 @@ block content
           if index > 2
             form(action=`/game_shelves/${shelf.id}/delete` method="post")
               <button style="font-size:24px"><i class="fa fa-trash-o"></i></button>
-
-    div(id="createShelf")
-      //- h3 Create a Shelf
-      form(action="/game_shelves/new" method="post")
-        label(class="createShelf" for="shelfName" )
-        input(type="text" name="shelfName" placeholder="Create a new shelf here")
-        <button style="font-size:24px"><i class="fa fa-plus-square" aria-hidden="true"></i></button>
+    div(id="shelf-wrapper")
+      div(id="createShelf")
+        //- h3 Create a Shelf
+        form(action="/game_shelves/new" method="post")
+          label(class="createShelf" for="shelfName" )
+          input(type="text" name="shelfName" placeholder="Create a new shelf here")
+          <button style="font-size:24px"><i class="fa fa-plus-square" aria-hidden="true"></i></button>

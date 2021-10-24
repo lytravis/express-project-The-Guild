@@ -13,6 +13,9 @@ block content
                 each shelf in gameshelves
                     option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
             button(id='addToShelfButton') Add
+    div(id='div-review-button')
+        a(href=`/reviews/${game.id}`)
+            button(id='review-button') Leave a review!
     div(id='div-reviews')
         each review in reviews
             div(id='review')
@@ -20,6 +23,3 @@ block content
                 p(id='content') #{review.content}
                 a(href=`/reviews/${game.id}/${review.id}/update`)
                         button(id='update-review-button') Update your review!
-    div(id='div-review-button')
-        a(href=`/reviews/${game.id}`)
-            button(id='review-button') Leave a review!

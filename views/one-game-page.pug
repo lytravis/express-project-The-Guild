@@ -18,6 +18,8 @@ block content
             div(id='review')
                 p(id='rating') #{review.rating}
                 p(id='content') #{review.content}
+                a(href=`/reviews/${game.id}/${review.id}/update`)
+                        button(id='update-review-button') Update your review!
     div(id='div-review-button')
         a(href=`/reviews/${game.id}`)
             button(id='review-button') Leave a review!

@@ -45,3 +45,8 @@ body {
 #reviews-wrapper {
   padding-bottom: 150px;
 }
+
+#review-button {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}

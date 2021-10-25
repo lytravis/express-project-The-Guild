@@ -1,6 +1,8 @@
-# Express Project Skeleton
+# Express Project - The Guild
 
-Use this project skeleton as a starting point for structuring your app. Things to note
-* Sequelize configuration has not yet been added -- you will need to set that up yourself
-* You may find yourself wanting to use javascript -- js files can be added in `public/javascripts` and should be appended to the Pug templates as needed
-* CSS files can go in `public/stylesheets` and also will need to be added to Pug templates
+## The Guild is a GoodReads clone, but with a twist.  The Guild aims to build community amongst gamers, where relevant information about games can be found and shared.
+## Features include:
+  -- Users can create, view, edit, and delete views for games
+  -- Users can leave ratings for games
+  -- Users can create, view, and delete game shelves
+  -- Users can view all the games listed on the site.

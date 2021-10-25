@@ -1,29 +1,30 @@
 extends layout.pug
 
 block content
-  div(id="register-page")
-    img(class="register-logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
-    form(class="register-form" action="/users/register" method="post")
-      if errors
-                  ul(class="errors")
-                      each error in errors
-                          li
-                            p= error
-      input(type='hidden' name='_csrf' value=csrfToken)
-      div
-        label(for="firstName" )
-        input(class="register-input" name='firstName' placeholder="First Name" type='text'  required)
-      div
-        label(for='lastName')
-        input(class="register-input" name='lastName' placeholder="Last Name" type='text' required)
-      div
-        label(for='email')
-        input(class="register-input" name='email' placeholder="Email Address" type='email' required)
-      div
-        label(for='password')
-        input(class="register-input" name='password' placeholder="Password" type='password' required)
-      div
-        label(for='confirmPassword')
-        input(class="register-input" name='confirmPassword' placeholder="Confirm Password" type='password' required)
-      div
-        button(class="register-btn" type="submit") Register
+  body(class="register-body")
+    div(id="register-page")
+      img(class="register-logo" src="/image-logos/the-guild-logo.png", alt="The Guild logo")
+      form(class="register-form" action="/users/register" method="post")
+        if errors
+                    ul(class="errors")
+                        each error in errors
+                            li
+                              p= error
+        input(type='hidden' name='_csrf' value=csrfToken)
+        div
+          label(for="firstName" )
+          input(class="register-input" name='firstName' placeholder="First Name" type='text'  required)
+        div
+          label(for='lastName')
+          input(class="register-input" name='lastName' placeholder="Last Name" type='text' required)
+        div
+          label(for='email')
+          input(class="register-input" name='email' placeholder="Email Address" type='email' required)
+        div
+          label(for='password')
+          input(class="register-input" name='password' placeholder="Password" type='password' required)
+        div
+          label(for='confirmPassword')
+          input(class="register-input" name='confirmPassword' placeholder="Confirm Password" type='password' required)
+        div
+          button(class="register-btn" type="submit") Register

@@ -15,18 +15,19 @@ block content
         a(class="game" href=`/games/${game.id}`)
           img(src= game.image)
 
-    h2 Game Shelves
-    each shelf, index in shelves
-      if index > 0
-        div(class="custom")
-          h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
-          if index > 2
-            form(action=`/game_shelves/${shelf.id}/delete` method="post")
-              button(class="create" type="submit" name="shelfId" value= shelf.id) Delete Shelf
-
-    div(id="createShelf")
-      h3 Create a Shelf
-      form(action="/game_shelves/new" method="post")
-        label(for="shelfName") Shelf Name
-        input(type="text" name="shelfName")
-        button Submit
+    div(class="shelves")
+      h2 Game Shelves
+      each shelf, index in shelves
+        if index > 0
+          div(class="custom")
+            h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
+            if index > 2
+              form(action=`/game_shelves/${shelf.id}/delete` method="post")
+                <button style="font-size:24px"><i class="fa fa-trash-o"></i></button>
+      div(id="shelf-wrapper")
+        div(id="createShelf")
+          //- h3 Create a Shelf
+          form(action="/game_shelves/new" method="post")
+            label(class="createShelf" for="shelfName" )
+            input(type="text" name="shelfName" placeholder="Create a new shelf here")
+            <button style="font-size:24px"><i class="fa fa-plus-square" aria-hidden="true"></i></button>

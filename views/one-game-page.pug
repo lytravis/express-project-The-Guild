@@ -12,6 +12,7 @@ block content
             select(name="addToShelf")
                 each shelf in gameshelves
                     option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
+
             button(id='addToShelfButton') Add
     div(id='div-review-button')
         a(href=`/reviews/${game.id}`)

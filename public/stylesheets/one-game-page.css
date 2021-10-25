@@ -1,45 +1,49 @@
 #game-image {
-    display: flex;
+  display: flex;
 }
 
 #img {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #div-description {
-    display: flex;
+  display: flex;
 }
 
 #description {
-    margin-left: 700px;
-    margin-right: 700px;
+  margin-left: 700px;
+  margin-right: 700px;
 }
 
 body {
-    background-color: #082032;
-    color: white;
+  background-color: #082032;
+  color: white;
 }
 
 #review {
-    /* display: flex; */
-    border: black solid 2px;
-    padding: 70px;
-    justify-content: center;
+  /* display: flex; */
+  border: black solid 2px;
+  padding: 70px;
+  justify-content: center;
 }
 
 #rating {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 #addToShelf {
-    padding: 20px;
-    margin-bottom: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
 }
 
 #addToShelfButton {
-    margin-left: 20px;
-    margin-bottom: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+#reviews-wrapper {
+  padding-bottom: 150px;
 }
 
 #review-button {

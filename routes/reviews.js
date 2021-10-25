@@ -30,7 +30,7 @@ router.post(
       gameId,
       rating,
       content,
-      createdAt,
+      // createdAt,
     });
     res.redirect(`/games/${gameId}`);
   })

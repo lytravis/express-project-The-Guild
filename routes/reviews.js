@@ -39,7 +39,9 @@ router.get('/:gameId(\\d+)/:reviewId(\\d+)/update', requireAuth, csrfProtection,
     } else {
         // front end need to have pop up telling user to log in as owner of review
         // res.send('Please log in as the owner of this review');
-        res.redirect('/users/login');
+        const err = new Error("Not Authorized");
+        err.status = 401;
+        throw err
     }
 }));
 

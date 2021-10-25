@@ -13,8 +13,15 @@ body {
   margin: 15px;
   display: flex;
   flex-direction: column;
+  /* border: black 1px solid; */
   /* align-items: center; */
   /* background-color: white; */
+}
+
+.quote-wrapper {
+  border: black 1px solid;
+  opacity: 10;
+  background-color: #555555;
 }
 
 h1,
@@ -36,9 +43,12 @@ h3 {
 .quote {
   margin: 10px 50px 0px;
   text-align: center;
+  color: #f0a500;
 }
 .citation {
-  margin-left: 200px;
+  margin-left: 700px;
+  font-style: italic;
+  font-size: 20px;
 }
 
 .current {

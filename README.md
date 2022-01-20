@@ -2,6 +2,8 @@
 
 The Guild is a GoodReads clone, but with a twist.  The Guild aims to build community amongst gamers, where relevant information about games can be found and shared.
 
+![home](https://cdn.discordapp.com/attachments/933641283874988052/933641301939855390/unknown.png)
+
 ## [GitHub Wiki Page](https://github.com/lytravis/express-project-The-Guild/wiki)
 
 ## Technologies Used
@@ -15,7 +17,9 @@ The Guild is a GoodReads clone, but with a twist.  The Guild aims to build commu
 
   - Users can create, view, edit, and delete reviews for games
   - Users can leave ratings for games
+  - ![reviews](https://cdn.discordapp.com/attachments/933641283874988052/933641366171447316/unknown.png)
   - Users can create, view, and delete game shelves
+  - ![shelves](https://cdn.discordapp.com/attachments/933641283874988052/933641425512448000/unknown.png)
   - Users can view all the games listed on the site.
 
 ## [Database Schema](https://github.com/lytravis/express-project-The-Guild/wiki/Database-Schema)

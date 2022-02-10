@@ -1,19 +1,20 @@
 extends layout.pug
 
 block content
-    h1= game.title
-    div(id='game-image')
-        img(id='img' src=game.image, alt=game.name)
-    div(id='div-description')
-        p(id='description') #{game.description}
-    form(action=`/game_shelves/${userId}/add` method="post")
-        if locals.authenticated
-            label(for="addToShelf" id='addToShelf') Add To Shelf
-            select(name="addToShelf")
-                each shelf in gameshelves
-                    option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
+    div(class='info-container')
+        div(class='info-img')
+            img(id='img' src=game.image, alt=game.name)
+            form(action=`/game_shelves/${userId}/add` method="post")
+                if locals.authenticated
+                    label(for="addToShelf" id='addToShelf') Add To Shelf
+                    select(name="addToShelf")
+                        each shelf in gameshelves
+                            option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
+                    button(id='addToShelfButton') Add
+        div(class='info-text')
+            h1= game.title
+            p(id='description') #{game.description}
 
-            button(id='addToShelfButton') Add
     div(id='reviews-wrapper')
         div(id='div-review-button')
             a(href=`/reviews/${game.id}`)

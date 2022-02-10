@@ -53,11 +53,6 @@ body {
   transition: all 0.5s ease-out;
 }
 
-.welcome {
-  font-weight: bold;
-  color: #dae5e6;
-}
-
 .button {
   background-color: #555555;
   color: #f0a500;

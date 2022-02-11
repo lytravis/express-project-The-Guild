@@ -44,10 +44,17 @@ body {
 }
 
 #review {
-  /* display: flex; */
-  border: black solid 2px;
-  padding: 70px;
-  justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #082032;
+  width: 1000px;
+  margin: 10px;
+  padding: 30px;
+}
+
+#review:hover {
+  border: 1px solid #3469ED;
 }
 
 #rating {
@@ -65,7 +72,10 @@ body {
 }
 
 #reviews-wrapper {
-  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 
 #review-button {

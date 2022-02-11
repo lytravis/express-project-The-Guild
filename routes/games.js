@@ -27,13 +27,13 @@ router.get(
           where: { id: userId }
         }]
       })
-
+      const users = await User.findAll()
       const id = req.params.gameId;
       const game = await Game.findByPk(id);
       const reviews = await Review.findAll({
-        where: {gameId: id}
+        where: { gameId: id }
       })
-      res.render("one-game-page", {game, reviews, userId, gameshelves})
+      res.render("one-game-page", {game, reviews, userId, gameshelves, users})
     } else {
       const id = req.params.gameId;
       const game = await Game.findByPk(id);

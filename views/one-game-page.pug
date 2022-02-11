@@ -22,9 +22,9 @@ block content
         div(id='div-reviews')
             each review in reviews
                 div(id='review')
-                    p(id='rating') Rating: #{review.rating}
-                    p(id='content') Review: #{review.content}
-                    p(id='review-user') Posted by: user# #{review.userId}
+                    p(id='review-user') #{users[review.userId-1].firstName} #{users[review.userId-1].lastName}
+                    p(id='rating') #{review.rating}
+                    p(id='content') #{review.content}
                     //- p(id='review-date') Posted on: #{review.createdAt.toString().split(' ').splice(0,5).join(' ')}
                     a(href=`/reviews/${game.id}/${review.id}/update`)
                             button(id='update-review-button') Update your review!

@@ -1,10 +1,9 @@
 #footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
   height: fit-content;
   min-height: 10px;
-  background-color: #334756;
+  background-color: #082032;
 }
 
 .footer-info {

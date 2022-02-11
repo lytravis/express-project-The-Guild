@@ -18,7 +18,7 @@ h3 {
 body {
   background-color: #082032;
   color: #dae5e6;
-  margin-bottom: 150px;
+  position: relative;
 }
 
 .games {

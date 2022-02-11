@@ -7,25 +7,26 @@ append head
   script(src="/javascripts/index.js" type="module" defer)
 
 block content
-  h1(class="main-caption") Start Your Next Adventure...
+  div(class="game-scrolls")
+    h1(class="main-caption") Start Your Next Adventure...
 
-  h2(class="main-header") Action/Adventure Games
-  div(class="games")
-    each game in actionGames
-      div(class="game")
-        a(href=`/games/${game.id}`)
-          img(src=`${game.image}`)
+    h2(class="main-header") Action/Adventure Games
+    div(class="games")
+      each game in actionGames
+        div(class="game")
+          a(href=`/games/${game.id}`)
+            img(src=`${game.image}`)
 
-  h2(class="main-header") Sports Games
-  div(class="games")
-    each game in sportsGames
-      div(class="game")
-        a(href=`/games/${game.id}`)
-          img(src=`${game.image}`)
+    h2(class="main-header") Sports Games
+    div(class="games")
+      each game in sportsGames
+        div(class="game")
+          a(href=`/games/${game.id}`)
+            img(src=`${game.image}`)
 
-  h2(class="main-header") Role Playing Games
-  div(class="games")
-    each game in rolePlayingGames
-      div(class="game")
-        a(href=`/games/${game.id}`)
-          img(src=`${game.image}`)
+    h2(class="main-header") Role Playing Games
+    div(class="games bottom")
+      each game in rolePlayingGames
+        div(class="game")
+          a(href=`/games/${game.id}`)
+            img(src=`${game.image}`)

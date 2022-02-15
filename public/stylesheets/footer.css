@@ -1,22 +1,36 @@
 #footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: fit-content;
-  min-height: 10px;
   background-color: #334756;
+  margin-top: 20px;
+  padding-bottom: 10px;
 }
 
 .footer-info {
   display: flex;
-  flex-direction: rows;
-  justify-content: flex-end;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .footer-img {
-  height: 2rem;
-  width: 2rem;
-  margin: 10px 10px;
+  height: 40px;
+  width: 40px;
+  margin: 5px;
+}
+
+.single-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-icons {
+  display: flex;
+  margin: -10px 0 0 10px;
+}
+
+.git-links {
+  height: 38px;
+}
+
+.linkedin-links {
+  width: 45px;
 }

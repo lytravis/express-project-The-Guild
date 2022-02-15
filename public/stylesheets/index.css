@@ -18,7 +18,7 @@ h3 {
 body {
   background-color: #082032;
   color: #dae5e6;
-  margin-bottom: 150px;
+  position: relative;
 }
 
 .games {
@@ -51,11 +51,6 @@ body {
 .game:hover {
   transform: scale(1.2);
   transition: all 0.5s ease-out;
-}
-
-.welcome {
-  font-weight: bold;
-  color: #dae5e6;
 }
 
 .button {

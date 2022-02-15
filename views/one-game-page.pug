@@ -1,4 +1,7 @@
-extends layout.pug
+extends layout
+
+append head
+    script(src="/javascripts/comment.js" type="module" defer)
 
 block content
     div(class='info-container')
@@ -25,6 +28,35 @@ block content
                     p(id='review-user') #{users[review.userId-1].firstName} #{users[review.userId-1].lastName[0]}.
                     p(id='rating') Rating: #{review.rating}
                     p(id='content') #{review.content}
-                    //- p(id='review-date') Posted on: #{review.createdAt.toString().split(' ').splice(0,5).join(' ')}
-                    a(href=`/reviews/${game.id}/${review.id}/update`)
-                            button(id='update-review-button') Update your review!
+                    button(type="button" data-toggle="modal" data-target="#comment-modal" id="update-comment") Update your review!
+                    #comment-modal.modal(role='document')
+                        .modal-dialog
+                            .modal-content
+                                .modal-header
+                                    h2 Update your review!
+                                .modal-body
+                                    if locals.authenticated
+                                        form(action=`/reviews/${gameId}/${reviewId}/update`, method="post")
+                                            input(type='hidden' name='_csrf' value=csrfToken)
+                                            div
+                                                img(src=game.image)
+                                            div
+                                                p #{review.rating}
+                                                p #{review.content}
+                                            div
+                                                label(for='rating') Change your rating!
+                                                select(name='rating' type='select' placeholder='Rating' required)
+                                                    option(value=1) 1 star
+                                                    option(value=2) 2 stars
+                                                    option(value=3) 3 stars
+                                                    option(value=4) 4 stars
+                                                    option(value=5) 5 stars
+                                            div
+                                                label(for='content') Did your opinion of the game change?
+                                                textarea(name='content' required)
+                                            div
+                                                button(type="submit") Submit
+                                    else
+                                        a(href='/users/login') Login to post a review!
+                        //- p(id='review-date') Posted on: #{review.createdAt.toString().split(' ').splice(0,5).join(' ')}
+                        //- a(href=`/reviews/${game.id}/${review.id}/update`)

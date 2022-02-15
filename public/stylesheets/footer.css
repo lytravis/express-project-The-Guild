@@ -1,16 +1,11 @@
 #footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: fit-content;
-  min-height: 10px;
-  background-color: #082032;
+  background-color: #334756;
   margin-top: 20px;
 }
 
 .footer-info {
   display: flex;
-  flex-direction: rows;
+  flex-direction: row;
   justify-content: flex-end;
   width: 100%;
   justify-content: space-around;

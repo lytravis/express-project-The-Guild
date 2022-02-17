@@ -23,13 +23,13 @@ block content
             a(href=`/reviews/${game.id}`)
                 button(id='review-button') Leave a review!
         div(id='div-reviews')
-            each review in reviews
+            each review, i in reviews
                 div(id='review')
                     p(id='review-user') #{users[review.userId-1].firstName} #{users[review.userId-1].lastName[0]}.
                     p(id='rating') Rating: #{review.rating}
                     p(id='content') #{review.content}
-                    button(type="button" data-toggle="modal" data-target="#comment-modal" id="update-comment") Update your review!
-                    #comment-modal.modal(role='document')
+                    button(type="button" data-toggle="modal" data-target="#comment-modal" class="update-comment index-" + (i)) Update your review!
+                    div(class="modal index-" + (i))
                         .modal-dialog
                             .modal-content
                                 .modal-header
@@ -58,5 +58,5 @@ block content
                                                 button(type="submit") Submit
                                     else
                                         a(href='/users/login') Login to post a review!
-                        //- p(id='review-date') Posted on: #{review.createdAt.toString().split(' ').splice(0,5).join(' ')}
-                        //- a(href=`/reviews/${game.id}/${review.id}/update`)
+                    //- p(id='review-date') Posted on: #{review.createdAt.toString().split(' ').splice(0,5).join(' ')}
+                    //- a(href=`/reviews/${game.id}/${review.id}/update`)

@@ -90,12 +90,16 @@ body {
 
 .modal-content {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #082032;
-  padding: 1rem 1.5rem;
-  width: 24rem;
+  background-color: #3B6280;
+  padding: 2rem 3rem;
+  width: 50rem;
+  height: fit-content;
   border-radius: 0.5rem;
 }
 
@@ -117,4 +121,24 @@ body {
   visibility: visible;
   transform: scale(1.0);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-body > form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-change {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-change > label, .review-change > textarea {
+  margin: 10px;
+}
+
+.rating-change > select {
+  width: 100px;
+  margin-left: 10px;
 }

@@ -6,6 +6,6 @@ window.addEventListener("load", (event) => {
     if (modal) modal.classList.toggle("show-modal");
   }
 
-  document.addEventListener("click", getModal)
+  document.addEventListener("click", getModal);
 
 });

@@ -42,16 +42,16 @@ block content
                                                 img(src=game.image)
                                             div
                                                 p #{review.rating}
-                                                p #{review.content}
-                                            div
+                                                p(class="review-content") #{review.content}
+                                            .rating-change
                                                 label(for='rating') Change your rating!
-                                                select(name='rating' type='select' placeholder='Rating' required)
+                                                select(name='rating' type='select' required)
                                                     option(value=1) 1 star
                                                     option(value=2) 2 stars
                                                     option(value=3) 3 stars
                                                     option(value=4) 4 stars
                                                     option(value=5) 5 stars
-                                            div
+                                            .review-change
                                                 label(for='content') Did your opinion of the game change?
                                                 textarea(name='content' required)
                                             div

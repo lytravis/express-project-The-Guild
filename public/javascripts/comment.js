@@ -3,35 +3,44 @@ window.addEventListener("load", (event) => {
   function getModal(event) {
     const index = event.target.classList[1];
     const modal = document.querySelectorAll(`.${index}`)[1];
-    if (modal) modal.classList.toggle("show-modal");
+    if (modal) modal.classList.toggle("show-modal"); // toggle class on and off
   }
 
-  document.addEventListener("click", getModal);
+  document.addEventListener("click", function (e) {
+    const index = e.target.classList[1];
+    const modal = document.querySelector(`.modal.${index}`);
+    if (modal) modal.classList.toggle("show-modal");
 
-  const form = document.querySelector('.update-comment-form');
-  const index = form.parentNode.parentNode.parentNode.parentNode.classList[1];
-  const modal = document.querySelectorAll(`.${index}`)[1];
-  const comment = document.getElementById("content");
+    const form = document.querySelector(`.update-comment-form.${index}`);
+    // const index = form.parentNode.parentNode.parentNode.parentNode.classList[1];
+    // const modal = document.querySelectorAll(`.${index}`)[1];
+    const comment = document.querySelector(`#content.${index}`);
+    const gameRating = document.querySelector(`#rating.${index}`);
 
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    const content = form.elements['content'].value;
-    const rating = +form.elements['rating'].value;
-    const token = form.elements['_csrf'].value;
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const content = form.elements['content'].value;
+        const rating = +form.elements['rating'].value;
+        const token = form.elements['_csrf'].value;
 
-    const res = await fetch(`/${form.action.split('/').slice(3).join('/')}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'CSRF-Token': `${token}`
-      },
-      body: JSON.stringify({
-        rating,
-        content
+        const res = await fetch(`/${form.action.split('/').slice(3).join('/')}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'CSRF-Token': `${token}`
+          },
+          body: JSON.stringify({
+            rating,
+            content
+          })
+        });
+        comment.innerHTML = content;
+        gameRating.innerHTML = `Rating: ${rating}`;
+        modal.classList.toggle("show-modal");
       })
-    });
-    comment.innerHTML = content;
-    modal.classList.toggle("show-modal");
-  })
+    }
+  });
+
 
 });

@@ -26,8 +26,8 @@ block content
             each review, i in reviews
                 div(id='review')
                     p(id='review-user') #{users[review.userId-1].firstName} #{users[review.userId-1].lastName[0]}.
-                    p(id='rating') Rating: #{review.rating}
-                    p(id='content') #{review.content}
+                    p(id='rating' class='index-' + (i)) Rating: #{review.rating}
+                    p(id='content' class='index-' + (i)) #{review.content}
                     if userId === review.userId
                         button(type="button" data-toggle="modal" data-target="#comment-modal" class="update-comment index-" + (i)) Update your review!
                     div(class="modal index-" + (i))
@@ -40,9 +40,9 @@ block content
                                         div
                                             img(src=game.image)
                                         div
-                                            p #{review.rating}
-                                            p(class="review-content") #{review.content}
-                                        form(action=`/reviews/${game.id}/${review.id}/update`, method="put" class="update-comment-form")
+                                            p(class="review-rating") #{review.rating}
+                                            p #{review.content}
+                                        form(action=`/reviews/${game.id}/${review.id}/update`, method="put" class="update-comment-form index-" + (i))
                                             input(type='hidden' name='_csrf' value=csrfToken)
                                             .rating-change
                                                 label(for='rating') Change your rating!

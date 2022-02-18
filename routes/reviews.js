@@ -69,6 +69,7 @@ router.get(
 // patch for specific review for specific game
 router.put(
   "/:gameId(\\d+)/:reviewId(\\d+)/update",
+  requireAuth,
   csrfProtection,
   asyncHandler(async (req, res) => {
     const gameId = req.params.gameId;

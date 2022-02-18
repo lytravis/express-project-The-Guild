@@ -74,14 +74,13 @@ router.put(
     const gameId = req.params.gameId;
     const reviewId = req.params.reviewId;
     const { content, rating } = req.body;
-    console.log(req.body, '!!!!!!!!!!!!!!!!!!');
+
     const review = await Review.findByPk(reviewId);
     review.update({
       content,
       rating,
     });
-    // res.redirect(`/games/${gameId}`);
-    return review;
+    res.status(200).send({ success: true });
   })
 );
 

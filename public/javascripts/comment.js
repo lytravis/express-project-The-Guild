@@ -1,6 +1,6 @@
 window.addEventListener("load", (event) => {
-  const form = document.querySelector('.update-comment-form');
-  async function getModal(event) {
+
+  function getModal(event) {
     const index = event.target.classList[1];
     const modal = document.querySelectorAll(`.${index}`)[1];
     if (modal) modal.classList.toggle("show-modal");
@@ -8,9 +8,10 @@ window.addEventListener("load", (event) => {
 
   document.addEventListener("click", getModal);
 
-
-
-  const comment = document.querySelector('.update-comment-button');
+  const form = document.querySelector('.update-comment-form');
+  const index = form.parentNode.parentNode.parentNode.parentNode.classList[1];
+  const modal = document.querySelectorAll(`.${index}`)[1];
+  const comment = document.getElementById("content");
 
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
@@ -29,7 +30,8 @@ window.addEventListener("load", (event) => {
         content
       })
     });
-    return res;
+    comment.innerHTML = content;
+    modal.classList.toggle("show-modal");
   })
 
 });

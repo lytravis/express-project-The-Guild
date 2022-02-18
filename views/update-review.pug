@@ -1,24 +1,29 @@
-h2 Update your review!
-if locals.authenticated
-    form(action=`/reviews/${gameId}/${reviewId}/update`, method="post")
-        input(type='hidden' name='_csrf' value=csrfToken)
-        div
-            img(src=game.image)
-        div
-            p #{review.rating}
-            p #{review.content}
-        div
-            label(for='rating') Change your rating!
-            select(name='rating' type='select' placeholder='Rating' required)
-                option(value=1) 1 star
-                option(value=2) 2 stars
-                option(value=3) 3 stars
-                option(value=4) 4 stars
-                option(value=5) 5 stars
-        div
-            label(for='content') Did your opinion of the game change?
-            textarea(name='content' required)
-        div
-            button(type="submit") Submit
-else
-    a(href='/users/login') Login to post a review!
+div(class="modal index-" + (i))
+    .modal-dialog
+        .modal-content
+            .modal-header
+                h2 Update your review!
+            .modal-body
+                if locals.authenticated
+                    div
+                        img(src=game.image)
+                    div
+                        p #{review.rating}
+                        p(class="review-content") #{review.content}
+                    form(action=`/reviews/${game.id}/${review.id}/update`, method="put" class="update-comment-form")
+                        input(type='hidden' name='_csrf' value=csrfToken)
+                        .rating-change
+                            label(for='rating') Change your rating!
+                            select(name='rating' type='select' required)
+                                option(value=5) 5 stars
+                                option(value=4) 4 stars
+                                option(value=3) 3 stars
+                                option(value=2) 2 stars
+                                option(value=1) 1 star
+                        .review-change
+                            label(for='content') Did your opinion of the game change?
+                            textarea(name='content' required)
+                        div
+                            button(type="submit" class="update-comment-button") Submit
+                else
+                    a(href='/users/login') Login to post a review!

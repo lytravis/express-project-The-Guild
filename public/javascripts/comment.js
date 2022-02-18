@@ -31,6 +31,19 @@ window.addEventListener("load", (event) => {
         modal.classList.toggle("show-modal");
       })
     }
+
+    const deleteButton = document.querySelector(`.delete-comment-button.${index}`);
+    const review = document.querySelector(`#review.${index}`);
+
+    deleteButton.addEventListener("click", async function(e) {
+      e.preventDefault();
+
+      await fetch(`/${form.action.split('/').slice(3).join('/')}`,
+        { method: 'DELETE' }
+      );
+      review.remove();
+      modal.classList.toggle("show-modal");
+    })
   });
 
 

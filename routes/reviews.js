@@ -36,35 +36,35 @@ router.post(
 );
 
 // get form to update specific review
-router.get(
-  "/:gameId(\\d+)/:reviewId(\\d+)/update",
-  requireAuth,
-  csrfProtection,
-  asyncHandler(async (req, res) => {
-    const gameId = req.params.gameId;
-    const reviewId = req.params.reviewId;
-    const game = await Game.findByPk(gameId);
-    const userId = req.session.auth.userId;
-    const review = await Review.findByPk(reviewId);
-    const token = req.csrfToken();
-    return token;
-    // if (review.userId === userId) {
-    //   res.render("update-review", {
-    //     csrfToken: req.csrfToken(),
-    //     review,
-    //     game,
-    //     gameId,
-    //     reviewId,
-    //   });
-    // } else {
-    //   // front end need to have pop up telling user to log in as owner of review
-    //   // res.send('Please log in as the owner of this review');
-    //   const err = new Error("Not Authorized");
-    //   err.status = 401;
-    //   throw err;
-    // }
-  })
-);
+// router.get(
+//   "/:gameId(\\d+)/:reviewId(\\d+)/update",
+//   requireAuth,
+//   csrfProtection,
+//   asyncHandler(async (req, res) => {
+//     const gameId = req.params.gameId;
+//     const reviewId = req.params.reviewId;
+//     const game = await Game.findByPk(gameId);
+//     const userId = req.session.auth.userId;
+//     const review = await Review.findByPk(reviewId);
+//     const token = req.csrfToken();
+//     return token;
+//     // if (review.userId === userId) {
+//     //   res.render("update-review", {
+//     //     csrfToken: req.csrfToken(),
+//     //     review,
+//     //     game,
+//     //     gameId,
+//     //     reviewId,
+//     //   });
+//     // } else {
+//     //   // front end need to have pop up telling user to log in as owner of review
+//     //   // res.send('Please log in as the owner of this review');
+//     //   const err = new Error("Not Authorized");
+//     //   err.status = 401;
+//     //   throw err;
+//     // }
+//   })
+// );
 
 // patch for specific review for specific game
 router.put(
@@ -84,5 +84,18 @@ router.put(
     res.status(200).send({ success: true });
   })
 );
+
+router.delete(
+  "/:gameId(\\d+)/:reviewId(\\d+)/update",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const reviewId = req.params.reviewId;
+    const review = await Review.findByPk(reviewId);
+
+    if (review) await review.destroy();
+
+    res.status(200).send({ success: true });
+    })
+  );
 
 module.exports = router;

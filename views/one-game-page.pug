@@ -24,7 +24,7 @@ block content
                 button(id='review-button') Leave a review!
         div(id='div-reviews')
             each review, i in reviews
-                div(id='review')
+                div(id='review' class="index-" + (i))
                     p(id='review-user') #{users[review.userId-1].firstName} #{users[review.userId-1].lastName[0]}.
                     p(id='rating' class='index-' + (i)) Rating: #{review.rating}
                     p(id='content' class='index-' + (i)) #{review.content}
@@ -57,6 +57,7 @@ block content
                                                 textarea(name='content' required)
                                             div
                                                 button(type="submit" class="update-comment-button") Submit
+                                                button(class="delete-comment-button index-" + (i)) Delete
                                     else
                                         a(href='/users/login') Login to post a review!
                     //- p(id='review-date') Posted on: #{review.createdAt.toString().split(' ').splice(0,5).join(' ')}

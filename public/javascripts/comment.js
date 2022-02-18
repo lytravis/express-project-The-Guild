@@ -1,19 +1,10 @@
 window.addEventListener("load", (event) => {
-
-  function getModal(event) {
-    const index = event.target.classList[1];
-    const modal = document.querySelectorAll(`.${index}`)[1];
-    if (modal) modal.classList.toggle("show-modal"); // toggle class on and off
-  }
-
   document.addEventListener("click", function (e) {
     const index = e.target.classList[1];
     const modal = document.querySelector(`.modal.${index}`);
     if (modal) modal.classList.toggle("show-modal");
 
     const form = document.querySelector(`.update-comment-form.${index}`);
-    // const index = form.parentNode.parentNode.parentNode.parentNode.classList[1];
-    // const modal = document.querySelectorAll(`.${index}`)[1];
     const comment = document.querySelector(`#content.${index}`);
     const gameRating = document.querySelector(`#rating.${index}`);
 
@@ -24,7 +15,7 @@ window.addEventListener("load", (event) => {
         const rating = +form.elements['rating'].value;
         const token = form.elements['_csrf'].value;
 
-        const res = await fetch(`/${form.action.split('/').slice(3).join('/')}`, {
+        await fetch(`/${form.action.split('/').slice(3).join('/')}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

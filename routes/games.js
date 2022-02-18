@@ -17,9 +17,9 @@ router.get("/", asyncHandler(async (req, res) => {
 
 router.get(
   "/:gameId(\\d+)",
+  csrfProtection,
   asyncHandler(async(req, res) => {
     if (req.session.auth){
-      console.log('!!!!!!!!!')
       const userId = req.session.auth.userId;
       const gameshelves = await GameShelf.findAll({
         include: [{
@@ -33,7 +33,7 @@ router.get(
       const reviews = await Review.findAll({
         where: { gameId: id }
       })
-      res.render("one-game-page", {game, reviews, userId, gameshelves, users})
+      res.render("one-game-page", {game, reviews, userId, gameshelves, users, csrfToken: req.csrfToken()})
     } else {
       const id = req.params.gameId;
       const users = await User.findAll()

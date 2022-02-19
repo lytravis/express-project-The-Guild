@@ -162,10 +162,15 @@ nav ul li:hover > ul {
 }
 
 .review-button {
-  margin: 20px;
-  background-color: #dae5e6;
-  padding: 10px 40px;
-  border-radius: 5%;
+  background-color: #8DC5F0;
+  border: none;
+  height: 40px;
+  width: 150px;
+  font-family: inherit;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 .review-drop-down {

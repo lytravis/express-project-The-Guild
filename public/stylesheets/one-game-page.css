@@ -142,3 +142,18 @@ body {
   width: 100px;
   margin-left: 10px;
 }
+
+#review-button, .update-comment {
+  background-color: #8DC5F0;
+  border: none;
+  height: 40px;
+  width: 150px;
+  font-family: inherit;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.update-comment {
+  width: 200px;
+}

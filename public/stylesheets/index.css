@@ -189,3 +189,9 @@ nav ul li:hover > ul {
   color: #f0a500;
   font-size: 15px;
 }
+
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

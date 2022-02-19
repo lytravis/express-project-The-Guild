@@ -28,7 +28,7 @@ window.addEventListener("load", (event) => {
         });
         comment.innerHTML = content;
         gameRating.innerHTML = `Rating: ${rating}`;
-        modal.classList.toggle("show-modal");
+        return modal.classList.toggle("show-modal");
       })
     }
 

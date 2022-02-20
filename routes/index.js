@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const { check, validationResult } = require("express-validator");
 const { csrfProtection, asyncHandler } = require("./utils");
-const { logUserOut, logUserIn } = require("../auth");
+const { logUserOut, logUserIn, requireAuth } = require("../auth");
 const db = require("../db/models");
 
 const router = express.Router();
@@ -26,6 +26,8 @@ router.get(
 // Demo User
 router.get(
   "/demo",
+  requireAuth,
+  csrfProtection,
   asyncHandler(async (req, res) => {
     const user = await db.User.findOne({
       where: {
@@ -47,6 +49,7 @@ router.get(
       shelves,
       user,
       games,
+      csrfToken: req.csrfToken()
     });
   })
 );

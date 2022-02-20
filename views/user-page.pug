@@ -2,6 +2,7 @@ extends layout.pug
 
 append head
   link(rel="stylesheet" href="/stylesheets/user-page.css")
+  script(src="/javascripts/user-page.js" type="module" defer)
 
 block content
   div(class="container")
@@ -17,20 +18,22 @@ block content
           img(src= game.image)
 
     div(class="shelves")
-      h2 Game Shelves
-      each shelf, index in shelves
-        if index > 0
-          div(class="custom")
-            h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
-            if index > 2
-              form(action=`/game_shelves/${shelf.id}/delete` method="post")
-                <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
+      .custom-shelves
+        h2 Game Shelves
+        each shelf, index in shelves
+          if index > 0
+            div(class="custom")
+              h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
+              if index > 2
+                form(action=`/game_shelves/${shelf.id}/delete` method="post")
+                  <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
       div(id="shelf-wrapper")
         div(id="createShelf")
           //- h3 Create a Shelf
-          form(action="/game_shelves/new" method="post")
+          form(class="new-shelf-form" action="/game_shelves/new" method="post")
             label(class="createShelf" for="shelfName" )
             div(class="new-shelf")
-              input(type="text" name="shelfName" placeholder="Create a new shelf here")
-              <button class="add-shelf">Create Shelf</button>
+              input(type='hidden' name='_csrf' value=csrfToken)
+              input(type="text" name="shelfName" placeholder="Create a new shelf here" )
+              button(class="add-shelf") Create Shelf
               //- <i class="fa fa-plus-square" aria-hidden="true"></i>

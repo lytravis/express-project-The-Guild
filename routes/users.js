@@ -9,26 +9,31 @@ const db = require("../db/models");
 const router = express.Router();
 
 /* GET users listing. */
-router.get("/:id(\\d+)", requireAuth, async function (req, res, next) {
-  const id = req.params.id;
-  const user = await db.User.findByPk(id);
-  const shelves = await db.GameShelf.findAll({ where: { userId: user.id } });
-  const games = await db.Game.findAll({
-    include: [
-      {
-        model: db.GameShelf,
-        where: { userId: id, shelfName: "Currently Playing" },
-      },
-    ],
-  });
-
-  res.render("user-page", {
-    title: `${user.firstName}'s page`,
-    shelves,
-    user,
-    games,
-  });
-});
+router.get("/:id(\\d+)",
+  requireAuth,
+  csrfProtection,
+  asyncHandler(async function (req, res, next) {
+    const id = req.params.id;
+    const user = await db.User.findByPk(id);
+    const shelves = await db.GameShelf.findAll({ where: { userId: user.id } });
+    const games = await db.Game.findAll({
+      include: [
+        {
+          model: db.GameShelf,
+          where: { userId: id, shelfName: "Currently Playing" },
+        },
+      ],
+    });
+    console.log(req.csrfToken())
+    res.render("user-page", {
+      title: `${user.firstName}'s page`,
+      shelves,
+      user,
+      games,
+      csrfToken: req.csrfToken()
+    });
+  })
+);
 
 router.get("/register", csrfProtection, (req, res) => {
   res.render("user-register", {

@@ -54,6 +54,7 @@ router.get(
 );
 router.post(
   "/demo",
+  csrfProtection,
   asyncHandler(async (req, res, next) => {
     const user = await db.User.findOne({
       where: {
@@ -81,6 +82,7 @@ router.post(
           shelves,
           user,
           games,
+          csrfToken: req.csrfToken()
         });
       }
     });

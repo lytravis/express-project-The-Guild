@@ -44,6 +44,7 @@ window.addEventListener("load", function() {
       );
       const shelfToDelete = form.parentNode;
       shelfToDelete.remove();
+      return;
     })
   });
 });

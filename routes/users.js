@@ -24,7 +24,6 @@ router.get("/:id(\\d+)",
         },
       ],
     });
-    console.log(req.csrfToken())
     res.render("user-page", {
       title: `${user.firstName}'s page`,
       shelves,

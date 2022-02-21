@@ -25,7 +25,7 @@ window.addEventListener("load", function() {
           ${result.shelf.shelfName}
         </a>
       </h3>
-        <form action='/game_shelves/${result.shelf.id}' method='post'>
+        <form class='delete-form' action='/game_shelves/${result.shelf.id}/delete' method='delete'>
           <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
         </form>
       `;

@@ -26,7 +26,6 @@ router.get(
 // Demo User
 router.get(
   "/demo",
-  requireAuth,
   csrfProtection,
   asyncHandler(async (req, res) => {
     const user = await db.User.findOne({

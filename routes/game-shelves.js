@@ -1,9 +1,11 @@
 const express = require("express");
 const { asyncHandler, csrfProtection } = require("./utils");
 const db = require("../db/models");
+const { requireAuth } = require("../auth");
 const router = express.Router();
 
 router.get("/:id(\\d+)",
+  requireAuth,
   asyncHandler(async (req, res) => {
   const shelfId = req.params.id;
   const userId = req.session.auth.userId;
@@ -18,6 +20,7 @@ router.get("/:id(\\d+)",
 }));
 
 router.delete("/:id(\\d+)/delete",
+  requireAuth,
   asyncHandler(async (req, res) => {
     const id = req.params.id;
 
@@ -30,6 +33,7 @@ router.delete("/:id(\\d+)/delete",
 
 router.post(
   "/new",
+  requireAuth,
   csrfProtection,
   asyncHandler(async (req, res) => {
     const { newShelf } = req.body;

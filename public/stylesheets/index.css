@@ -18,7 +18,7 @@ h3 {
 body {
   background-color: #082032;
   color: #dae5e6;
-  margin-bottom: 150px;
+  position: relative;
 }
 
 .games {
@@ -51,11 +51,6 @@ body {
 .game:hover {
   transform: scale(1.2);
   transition: all 0.5s ease-out;
-}
-
-.welcome {
-  font-weight: bold;
-  color: #dae5e6;
 }
 
 .button {
@@ -167,10 +162,15 @@ nav ul li:hover > ul {
 }
 
 .review-button {
-  margin: 20px;
-  background-color: #dae5e6;
-  padding: 10px 40px;
-  border-radius: 5%;
+  background-color: #8DC5F0;
+  border: none;
+  height: 40px;
+  width: 150px;
+  font-family: inherit;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 .review-drop-down {
@@ -188,4 +188,10 @@ nav ul li:hover > ul {
 .welcome {
   color: #f0a500;
   font-size: 15px;
+}
+
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

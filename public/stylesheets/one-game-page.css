@@ -2,18 +2,40 @@
   display: flex;
 }
 
-#img {
-  margin-left: auto;
-  margin-right: auto;
+.info-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-#div-description {
+.info-text {
   display: flex;
+  flex-direction: column;
+  margin-left: -150px;
+}
+
+/* .info-text > h1 {
+  margin-top: 30px;
+} */
+
+.info-img {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 40px 10px 0 0;
+}
+
+#img {
+  width: 460px;
+  height: 215px;
 }
 
 #description {
-  margin-left: 700px;
-  margin-right: 700px;
+  width: 600px;
+  margin: 20px auto;
+  line-height: 1.5;
 }
 
 body {
@@ -22,14 +44,26 @@ body {
 }
 
 #review {
-  /* display: flex; */
-  border: black solid 2px;
-  padding: 70px;
-  justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #334756;
+  width: 1000px;
+  margin: 10px;
+  padding: 30px;
+  border: 1px solid transparent;
+}
+
+#review:hover {
+  border: 1px solid #8DC5F0;
+}
+
+#review > p {
+  margin-top: -2px;
 }
 
 #rating {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 #addToShelf {
@@ -40,13 +74,94 @@ body {
 #addToShelfButton {
   margin-left: 20px;
   margin-bottom: 10px;
+  background-color: #8DC5F0;
+  border: none;
+  height: 30px;
+  width: 100px;
+  font-family: inherit;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 #reviews-wrapper {
-  padding-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
 }
 
 #review-button {
     margin-left: 20px;
     margin-bottom: 5px;
+}
+
+.modal-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #3B6280;
+  padding: 2rem 3rem;
+  width: 50rem;
+  height: fit-content;
+  border-radius: 0.5rem;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-body > form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-change {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-change > label, .review-change > textarea {
+  margin: 10px;
+}
+
+.rating-change > select {
+  width: 100px;
+  margin-left: 10px;
+}
+
+#review-button, .update-comment {
+  background-color: #8DC5F0;
+  border: none;
+  height: 40px;
+  width: 150px;
+  font-family: inherit;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.update-comment {
+  width: 200px;
 }

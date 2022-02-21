@@ -4,7 +4,7 @@
 
 #header {
   display: flex;
-  position: sticky;
+  position: relative;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -12,7 +12,6 @@
 }
 
 #header-logo {
-  /* color: white; */
   font-weight: 1000;
   font-size: 30px;
   margin-left: 25px;
@@ -42,7 +41,10 @@
 .search-bar {
   box-sizing: border-box;
   margin: auto;
-  max-width: 300px;
+  width: 300px;
+  position: absolute;
+  left: 600px;
+  right: 500px;
 }
 
 .search-input {

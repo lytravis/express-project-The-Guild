@@ -24,11 +24,13 @@ block content
             h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
             if index > 2
               form(action=`/game_shelves/${shelf.id}/delete` method="post")
-                <button style="font-size:24px"><i class="fa fa-trash-o"></i></button>
+                <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
       div(id="shelf-wrapper")
         div(id="createShelf")
           //- h3 Create a Shelf
           form(action="/game_shelves/new" method="post")
             label(class="createShelf" for="shelfName" )
-            input(type="text" name="shelfName" placeholder="Create a new shelf here")
-            <button style="font-size:24px"><i class="fa fa-plus-square" aria-hidden="true"></i></button>
+            div(class="new-shelf")
+              input(type="text" name="shelfName" placeholder="Create a new shelf here")
+              <button class="add-shelf">Create Shelf</button>
+              //- <i class="fa fa-plus-square" aria-hidden="true"></i>

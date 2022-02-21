@@ -1,29 +1,64 @@
-extends layout.pug
+extends layout
+
+append head
+    script(src="/javascripts/comment.js" type="module" defer)
 
 block content
-    h1= game.title
-    div(id='game-image')
-        img(id='img' src=game.image, alt=game.name)
-    div(id='div-description')
-        p(id='description') #{game.description}
-    form(action=`/game_shelves/${userId}/add` method="post")
-        if locals.authenticated
-            label(for="addToShelf" id='addToShelf') Add To Shelf
-            select(name="addToShelf")
-                each shelf in gameshelves
-                    option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
+    div(class='info-container')
+        div(class='info-img')
+            img(id='img' src=game.image, alt=game.name)
+            form(action=`/game_shelves/${userId}/add` method="post")
+                if locals.authenticated
+                    label(for="addToShelf" id='addToShelf') Add To Shelf
+                    select(name="addToShelf")
+                        each shelf in gameshelves
+                            option(value= `${shelf.id}, ${game.id}` )= shelf.shelfName
+                    button(id='addToShelfButton') Add
+        div(class='info-text')
+            h1= game.title
+            p(id='description') #{game.description}
 
-            button(id='addToShelfButton') Add
     div(id='reviews-wrapper')
         div(id='div-review-button')
             a(href=`/reviews/${game.id}`)
                 button(id='review-button') Leave a review!
         div(id='div-reviews')
-            each review in reviews
-                div(id='review')
-                    p(id='rating') Rating: #{review.rating}
-                    p(id='content') Review: #{review.content}
-                    p(id='review-user') Posted by: user# #{review.userId}
+            each review, i in reviews
+                div(id='review' class="index-" + (i))
+                    p(id='review-user') #{users[review.userId-1].firstName} #{users[review.userId-1].lastName[0]}.
+                    p(id='rating' class='index-' + (i)) Rating: #{review.rating}
+                    p(id='content' class='index-' + (i)) #{review.content}
+                    if userId === review.userId
+                        button(type="button" data-toggle="modal" data-target="#comment-modal" class="update-comment index-" + (i)) Update your review!
+                    div(class="modal index-" + (i))
+                        .modal-dialog
+                            .modal-content
+                                .modal-header
+                                    h2 Update your review!
+                                .modal-body
+                                    if locals.authenticated
+                                        div
+                                            img(src=game.image)
+                                        div
+                                            p(class="review-rating") #{review.rating}
+                                            p #{review.content}
+                                        form(action=`/reviews/${game.id}/${review.id}/update`, method="put" class="update-comment-form index-" + (i))
+                                            input(type='hidden' name='_csrf' value=csrfToken)
+                                            .rating-change
+                                                label(for='rating') Change your rating!
+                                                select(name='rating' type='select' required)
+                                                    option(value=5) 5 stars
+                                                    option(value=4) 4 stars
+                                                    option(value=3) 3 stars
+                                                    option(value=2) 2 stars
+                                                    option(value=1) 1 star
+                                            .review-change
+                                                label(for='content') Did your opinion of the game change?
+                                                textarea(name='content' required)
+                                            div
+                                                button(type="submit" class="update-comment-button") Submit
+                                                button(class="delete-comment-button index-" + (i)) Delete
+                                    else
+                                        a(href='/users/login') Login to post a review!
                     //- p(id='review-date') Posted on: #{review.createdAt.toString().split(' ').splice(0,5).join(' ')}
-                    a(href=`/reviews/${game.id}/${review.id}/update`)
-                            button(id='update-review-button') Update your review!
+                    //- a(href=`/reviews/${game.id}/${review.id}/update`)

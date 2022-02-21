@@ -17,15 +17,14 @@ router.get("/:id(\\d+)",
   res.render("shelf-page", { games, shelf, userId });
 }));
 
-router.post("/:id(\\d+)/delete",
+router.delete("/:id(\\d+)/delete",
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const userId = req.session.auth.userId;
 
     const shelf = await db.GameShelf.findOne({ where: { id } });
     await shelf.destroy();
 
-    res.redirect(`/users/${userId}`);
+    res.status(200).send({ sucess: true });
   })
 );
 

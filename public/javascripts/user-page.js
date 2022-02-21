@@ -20,16 +20,30 @@ window.addEventListener("load", function() {
     const shelf = document.createElement("div");
     shelf.setAttribute("class", "custom");
     shelf.innerHTML = `
-    <h3>
-      <a href='/game_shelves/${result.shelf.id}'>
-        ${result.shelf.shelfName}
-      </a>
-    </h3>
-      <form action='/game_shelves/${result.shelf.id}' method='post'>
-        <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
-      </form>
-    `;
+      <h3>
+        <a href='/game_shelves/${result.shelf.id}'>
+          ${result.shelf.shelfName}
+        </a>
+      </h3>
+        <form action='/game_shelves/${result.shelf.id}' method='post'>
+          <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
+        </form>
+      `;
     shelves.appendChild(shelf);
     formInput.value = '';
   });
-})
+
+  const deleteForms = document.querySelectorAll(".delete-form");
+
+  deleteForms.forEach(form => {
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      await fetch(`/${form.action.split('/').slice(3).join('/')}`,
+      { method: 'DELETE' }
+      );
+      const shelfToDelete = form.parentNode;
+      shelfToDelete.remove();
+    })
+  });
+});

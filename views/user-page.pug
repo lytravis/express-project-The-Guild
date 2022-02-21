@@ -25,7 +25,7 @@ block content
             div(class="custom")
               h3: a(href=`/game_shelves/${shelf.id}`)= shelf.shelfName
               if index > 2
-                form(action=`/game_shelves/${shelf.id}/delete` method="post")
+                form(action=`/game_shelves/${shelf.id}/delete` method="delete" class="delete-form")
                   <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
       div(id="shelf-wrapper")
         div(id="createShelf")

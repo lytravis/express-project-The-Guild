@@ -1,6 +1,7 @@
 window.addEventListener("load", function() {
   const form = document.querySelector(".new-shelf-form");
   const shelves = document.querySelector(".custom-shelves");
+  const formInput = document.querySelector(".new-shelf-input");
 
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
@@ -16,5 +17,19 @@ window.addEventListener("load", function() {
       body: JSON.stringify({ newShelf })
     })
     const result = await data.json();
+    const shelf = document.createElement("div");
+    shelf.setAttribute("class", "custom");
+    shelf.innerHTML = `
+    <h3>
+      <a href='/game_shelves/${result.shelf.id}'>
+        ${result.shelf.shelfName}
+      </a>
+    </h3>
+      <form action='/game_shelves/${result.shelf.id}' method='post'>
+        <button class="delete-shelf"><i class="fa fa-trash-o"></i></button>
+      </form>
+    `;
+    shelves.appendChild(shelf);
+    formInput.value = '';
   });
 })

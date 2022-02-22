@@ -1,9 +1,12 @@
 const express = require("express");
 const { asyncHandler, csrfProtection } = require("./utils");
 const db = require("../db/models");
+const { requireAuth } = require("../auth");
 const router = express.Router();
 
-router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
+router.get("/:id(\\d+)",
+  requireAuth,
+  asyncHandler(async (req, res) => {
   const shelfId = req.params.id;
   const userId = req.session.auth.userId;
   const shelf = await db.GameShelf.findByPk(shelfId);
@@ -16,29 +19,30 @@ router.get("/:id(\\d+)", asyncHandler(async (req, res) => {
   res.render("shelf-page", { games, shelf, userId });
 }));
 
-router.post("/:id(\\d+)/delete",
+router.delete("/:id(\\d+)/delete",
+  requireAuth,
   asyncHandler(async (req, res) => {
     const id = req.params.id;
-    const userId = req.session.auth.userId;
 
     const shelf = await db.GameShelf.findOne({ where: { id } });
     await shelf.destroy();
 
-    res.redirect(`/users/${userId}`);
+    res.status(200).send({ sucess: true });
   })
 );
 
 router.post(
   "/new",
+  requireAuth,
+  csrfProtection,
   asyncHandler(async (req, res) => {
-    const { shelfName } = req.body;
+    const { newShelf } = req.body;
     const userId = req.session.auth.userId;
     const shelf = await db.GameShelf.create({
       userId,
-      shelfName,
+      shelfName: newShelf
     });
-
-    res.redirect(`/users/${userId}`);
+    res.status(200).send({ shelf });
   })
 );
 

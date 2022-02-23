@@ -41,7 +41,7 @@ router.post(
     const shelf = await db.GameShelf.create({
       userId,
       shelfName: newShelf
-    });
+    })
     res.status(200).send({ shelf });
   })
 );

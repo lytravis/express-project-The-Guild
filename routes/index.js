@@ -54,7 +54,6 @@ router.get(
 );
 router.post(
   "/demo",
-  csrfProtection,
   asyncHandler(async (req, res, next) => {
     const user = await db.User.findOne({
       where: {
@@ -72,18 +71,11 @@ router.post(
         },
       ],
     });
-    console.log(req.session);
     return req.session.save((err) => {
       if (err) {
         next(err);
       } else {
-        return res.render("user-page", {
-          title: `${user.firstName}'s page`,
-          shelves,
-          user,
-          games,
-          csrfToken: req.csrfToken()
-        });
+        return res.redirect("/");
       }
     });
   })
